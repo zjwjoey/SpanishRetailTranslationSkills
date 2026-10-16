@@ -10,6 +10,8 @@
 
 IKEA首轮已实际生成并统一AI核对1000个唯一SKU，完成第一轮候选规则调优：修订111个SKU的116个字段，独立复查修订范围；最终查看版隔离98个SKU的108个字段。另以20个新SKU执行旧/新规则实际比较，仍发现术语精度及倍数疑点，保持Candidate，尚未通过人工质量验收。详见[`首1000核对与调优记录`](reports/IKEA_FIRST1000_AUDIT_TUNING_R1.md)及[`原生成记录`](reports/IKEA_FIRST1000_GENERATION.md)。本轮没有启动第二个1000，IKEA可信Training/Validation/Holdout均为0。
 
+后续授权已进入第二1000准备：旋钮/拉手、洗碗机自动洗涤/机器维护及倍率总量/增量规则已修订，5条真实失败案例与8条synthetic完成回归和独立复查；原不明倍率描述继续隔离，门禁仅为候选+隔离。已选定1000个不同SKU，排除首1000及验证20条；按[`第二1000执行规范`](evaluations/IKEA_SECOND1000_PROTOCOL.md)冻结后10批×100生成，全部完成后统一核对。实际生成进度以运行记录为准，不能把已选择视为已翻译。
+
 2026-10-16 实际开发状态及测试、数据核验和阻塞项见 [`reports/FOUNDATION_ACCEPTANCE.md`](reports/FOUNDATION_ACCEPTANCE.md)。下方目标、路线图和示例仍是验收要求，不代表对应门槛全部通过。
 
 ---

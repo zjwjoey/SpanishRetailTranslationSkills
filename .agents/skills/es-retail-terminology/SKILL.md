@@ -5,7 +5,7 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 
 # 西语零售术语与标识保护
 
-版本 `0.2.1-candidate-ikea-r1`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
+版本 `0.2.2-candidate-ikea02a2`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
 
 ## 输入和适用范围
 
