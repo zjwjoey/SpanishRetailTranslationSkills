@@ -1,0 +1,49 @@
+{
+  "stage": "R3_RULES_AND_ENGINEERING_GATES",
+  "status": "IN_PROGRESS_REAL_REGRESSION_PENDING",
+  "parent_commit": "43c3eff",
+  "requested_new_spanish_skus": 1000,
+  "replaces_initial_target": 100,
+  "skill_versions": {
+    "translator": "1.0.6-candidate-amazon-r3",
+    "reviewer": "1.0.6-candidate-amazon-r3",
+    "terminology": "0.2.4-candidate-amazon-r3",
+    "category": "unchanged_foundation_candidate",
+    "learning": "unchanged_EVIDENCE_BLOCKED"
+  },
+  "extension": "amazon-r3-v1",
+  "foundation_tests": {
+    "executed": 17,
+    "passed": 17
+  },
+  "synthetic_projection_role_tests": {
+    "executed": 13,
+    "passed": 13,
+    "not_translation_accuracy": true
+  },
+  "official_skill_structure_checks": {
+    "executed": 5,
+    "passed": 5
+  },
+  "source_pool": {
+    "records": 1200,
+    "status": "RAW_SOURCE_ONLY_NOT_LANGUAGE_CONFIRMED",
+    "header_mapping_initial_failure_preserved": true,
+    "corrected_source_mismatches": 0,
+    "corrected_metadata_mismatches": 0
+  },
+  "real_regression_cases": 6,
+  "real_regression_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "native_schema": "ACTUALLY_CHECKED_PER_EMITTED_CANDIDATE",
+  "automatic_skill_discovery": "NOT_RUN",
+  "formal_datasets": {
+    "train": 0,
+    "validation": 0,
+    "holdout": 0
+  },
+  "human_confirmed": 0,
+  "requested_subagent_model": "gpt-5.6-luna",
+  "observed_model": "unknown",
+  "approved_changed": false,
+  "pushed": false
+}

@@ -5,7 +5,7 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 
 # 西语零售术语与标识保护
 
-版本 `0.2.3-candidate-amazon-r2`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
+版本 `0.2.4-candidate-amazon-r3`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
 
 ## 输入和适用范围
 
@@ -14,6 +14,8 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 输入为 `item_id/platform/product_id/source_snapshot/source/source_locations`；可附同一源快照的 `category_context`。保留完整源或不可变引用、有序重复属性和变体信息，不用历史中文补造西语事实。仅给名称可以部分处理并列出缺口；稳定身份或快照无法确定、源不可访问、JSON重复key导致丢值时，停止该项定稿并报 `FAILED`。
 
 触发例：“结合清洁用品语境判断西语 cepillo 并保护型号”。非触发例：“删除Amazon重复段落”“批准中文整件译文”“翻译德语文章”；说明边界并交回调度，不为非适用请求制造商品通过记录。
+
+兼容对象型号后缀/连接器、产品代际和件数须按[事实唯一来源与目标投影](../../../contracts/FACT_LEDGER_PROJECTION.md)分槽：明确Generación为第几代，禁止因数值为2而译作2件；兼容品牌和协议不是本商品制造品牌或件数。
 
 ## 判断流程
 
