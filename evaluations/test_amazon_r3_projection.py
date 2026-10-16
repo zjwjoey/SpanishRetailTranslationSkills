@@ -55,5 +55,8 @@ class ProjectionTests(unittest.TestCase):
  def test_uncertainty_note_without_actual_isolation_rejected(self):
   s,f,o=fixture();o['uncertainties']=[{'fact_ids':['f4'],'reason':'uncertain dimension'}]
   with self.assertRaisesRegex(AssertionError,'uncertainty not locally isolated'):validate(s,f,o)
+ def test_metadata_leak_into_product_rejected(self):
+  s,f,o=fixture();f['facts'][4]['action']='METADATA';o['retained_facts'][4]['action']='METADATA'
+  with self.assertRaisesRegex(AssertionError,'metadata leaked into product'):validate(s,f,o)
 
 if __name__=='__main__':unittest.main()

@@ -58,6 +58,8 @@ def validate(src,first,out):
     assert f['zh']!=f['source_span']['quote'],'long source echo is not translation'
   if f['role']=='generation' and f['zh']:
    assert re.search(r'第.{1,12}代',f['zh']) and not re.search(r'个|件|单位|包装',f['zh']),'generation treated as count'
+  if re.search(r'Clasificaci[oó]n en los m[aá]s vendidos|Valoraci[oó]n media de los clientes|Opiniones de los clientes|Producto en Amazon.es desde',f['source_span']['quote'],re.I) and f['zh'] is not None:
+   assert f['action']=='METADATA','platform metadata mixed with product facts'
  pm=out['projection_map'];paths=[p['target_path'] for p in pm];assert len(paths)==len(set(paths)),'duplicate projection path'
  targets=dict(strings(out['translation_zh'],'/translation_zh'))
  assert set(targets)<=set(paths),'unbound target string'
@@ -70,6 +72,7 @@ def validate(src,first,out):
   for fid in ids:uses[fid].add(p['target_path'])
  for fid,f in fs.items():
   assert set(f['target_fields'])==uses[fid],'fact reverse targets'
+  if f['action']=='METADATA':assert not any(p.startswith('/translation_zh/') for p in uses[fid]),'metadata leaked into product target'
   if f['action'] in ['TRANSLATE','PRESERVE','METADATA']:assert uses[fid],'unrendered retained fact '+fid
   if f['action']=='DEDUPLICATE':assert f['canonical_fact_id'] in fs,'dedup canonical absent'
  for x in out['compatibility_lists']:
@@ -105,6 +108,29 @@ def validate(src,first,out):
   f=fs[d['decision_id']];assert d['action']==f['action'] and d['source_field']==f['source_field'] and d['source_span']==f['source_span'],'audit/canonical mismatch'
  assert {v['decision_id'] for v in out['source_audit']['preservation_ledger']}=={fid for fid,f in fs.items() if f['action']!='TRANSLATE'},'nontranslation ledger missing'
  return {'facts':len(facts),'compatibility_items':sum(len(v['items']) for v in out['compatibility_lists']),'projections':len(pm)}
+def validate_audit(src,first,audit,candidate):
+ assert src['asin']==first['asin']==audit['asin'] and src['source_sha256']==first['source_sha256']==audit['source_sha256'],'audit identity/hash'
+ def normalized(fields):return {re.split(r'[.\[]',v.removeprefix('source.'))[0] for v in fields}
+ assert set(src['source'])<=normalized(audit['checked_source_fields']),'audit source field coverage'
+ assert first['facts'] and first['language_gate']['status']==audit['language_gate']['status'],'audit independent source facts/language'
+ for e in first['language_gate'].get('evidence',[]):span(src,e)
+ for f in first['facts']:
+  span(src,f);assert len(f['meaning'])>=3 and f['meaning'] not in ['源段完整保留','参数已保留','已核对'],'audit generic source fact'
+ assert audit['status']=='REVIEW_REQUIRED' and audit['human_confirmed']==0 and len(audit['comparison_note'])>=50,'audit status/note'
+ assert set(audit['focus_checks'])=={'compatibility_inventory','generation_quantity','target_consistency'},'audit focus checks'
+ fs={f['fact_id']:f for f in candidate['retained_facts']}
+ pm={v['target_path']:v for v in candidate['projection_map']}
+ for f in audit['findings']:
+  assert f['severity'] in ['P0','P1','P2'] and f['issue_type'] in ['OMISSION','ROLE','NUMBER','PROJECTION','OVER_QUARANTINE','UNSUPPORTED','SOURCE_SCOPE','STRUCTURE'],'audit finding type'
+  span(src,f);assert f['reason'] and f['suggestion']
+  ids=f['fact_ids'];assert isinstance(ids,list) and all(fid in fs for fid in ids),'audit fact IDs'
+  if f.get('target_quote'):
+   assert f.get('target_path') and isinstance(get(candidate,f['target_path']),str) and f['target_quote'] in get(candidate,f['target_path']),'audit target path/quote'
+   assert ids,'existing incorrect target must bind canonical fact IDs'
+   if f['target_path'] in pm:assert set(ids)<=set(pm[f['target_path']]['fact_ids']),'audit fact not bound to target'
+ for u in audit['uncertainties']:
+  span(src,u);assert u['reason'] and all(fid in fs for fid in u.get('fact_ids',[])),'audit uncertainty binding'
+ return {'findings':len(audit['findings']),'uncertainties':len(audit['uncertainties'])}
 def main():
  p=argparse.ArgumentParser();p.add_argument('--input',required=True);p.add_argument('--source-first',required=True);p.add_argument('--candidate',required=True);args=p.parse_args()
  src={v['asin']:v for v in read(args.input)};pre={v['asin']:v for v in read(args.source_first)};rows=read(args.candidate);errors=[];stats=[]

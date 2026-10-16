@@ -41,6 +41,8 @@
 
 不得写另一份无投影依据的合成中文作为额外`summary`、嵌套备份或备注成品。平台metadata/标识按基础契约单独保存实际值和来源，不因缺少某个原生导出对象就把已经正确的中文事实判错。
 
+排名、评论、评分、上架时间等规范事实用METADATA并投向research_metadata，不进入商品标题/卖点/描述或规格。混合原字段先把平台声称和商品技术属性拆开；不能用technical_spec大块标签把平台数据重新混回商品功能。来源平台类目仍按基础契约单列译文categories。
+
 ## 5. 原生交付与独立检查
 
 交付基础契约规定的完整实际对象（含translation_zh、identifiers、research_metadata、field_alignment、protected_identifiers、retained_facts、账本、疑点、review和run_metadata），扩展字段`contract_extension=amazon-r3-v1`、`compatibility_lists`、`numeric_role_checks`、`projection_map`。不可只交事实表并称完整原生契约通过。明确源不可恢复时FAILED；其余候选保持REVIEW_REQUIRED，人工确认不自动产生。

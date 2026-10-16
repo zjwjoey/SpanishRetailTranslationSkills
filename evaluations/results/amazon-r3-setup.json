@@ -1,6 +1,6 @@
 {
   "stage": "R3_RULES_AND_ENGINEERING_GATES",
-  "status": "IN_PROGRESS_REAL_REGRESSION_PENDING",
+  "status": "REGRESSION_SCOPED_PASS_NEW1000_PENDING",
   "parent_commit": "43c3eff",
   "requested_new_spanish_skus": 1000,
   "replaces_initial_target": 100,
@@ -17,8 +17,8 @@
     "passed": 17
   },
   "synthetic_projection_role_tests": {
-    "executed": 13,
-    "passed": 13,
+    "executed": 14,
+    "passed": 14,
     "not_translation_accuracy": true
   },
   "official_skill_structure_checks": {
@@ -33,7 +33,7 @@
     "corrected_metadata_mismatches": 0
   },
   "real_regression_cases": 6,
-  "real_regression_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "real_regression_acceptance": "6_GENERATED_AND_INDEPENDENTLY_AUDITED_0P0_0P1_1P2",
   "native_schema": "ACTUALLY_CHECKED_PER_EMITTED_CANDIDATE",
   "automatic_skill_discovery": "NOT_RUN",
   "formal_datasets": {
