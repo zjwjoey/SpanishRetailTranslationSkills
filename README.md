@@ -1,6 +1,6 @@
 # Spanish Retail Translation Skills
 
-当前任务（2026-10-16）：Amazon 20261005西语5000 SKU中选择200个代表商品，按两个100条业务批次、gpt-5.6-luna子智能体运行，超长字段拆小组；完成后统一独立核对。未知事实槽隔离，历史中文不作为答案，本轮不扩大到5000条。协议见[evaluations/AMAZON_200_PILOT_PROTOCOL.md](evaluations/AMAZON_200_PILOT_PROTOCOL.md)。
+当前进展（2026-10-16）：Amazon 200 SKU已按两个100条业务批次、gpt-5.6-luna子智能体完成生成和独立AI核对。隔离485段、涉及156个SKU，保留149条标题候选；发现局部隔离过粗、事实覆盖及部件角色问题。全部仍为候选，人工金标0，未扩大到5000条，规则版本未修改。详见[统一核对报告](reports/AMAZON_200_PILOT_REVIEW.md)及[执行协议](evaluations/AMAZON_200_PILOT_PROTOCOL.md)。
 
 > 面向西班牙语零售商品货盘的 **Codex 原生专业翻译 Skills**：以 Action 与 Amazon.es 的真实商品数据为基础，形成可追溯、可评测、可持续优化的西班牙语 → 简体中文商品翻译能力。
 
