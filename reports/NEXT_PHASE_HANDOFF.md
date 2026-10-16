@@ -2,6 +2,8 @@
 
 从本仓库根目录和feature/foundation-v1继续；先读README、AGENTS、CODEX_DEVELOPMENT_PROMPT_V3、FOUNDATION_ACCEPTANCE。
 
+2026-10-16最新：第二轮已实际运行32件新商品及内部修复/回归，但新P1使两次候选均未通过，当前Reviewer恢复1.0.1。先读[第二轮结果与回退](ROUND2_TUNING_REPORT.md)；knowledge/proposals/ROUND2_REVIEWER_CANDIDATE.patch禁止自动应用。原始失败证据及排除问题后的候选字段在local/tuning-round-02，不能当人工gold。下一轮先修Translator目标事实覆盖、字段角色和引用闭合，再冻结新版本/新商品验证。
+
 2026-10-16更新：第一轮工程候选调优及24件新商品配对验证已执行，先读[本轮真实结果与证据](ROUND1_TUNING_REPORT.md)。Reviewer为1.0.1-candidate-r1；正式人工知识和Train/Validation/Holdout准入仍0。local/tuning-round-01/post-review/attempt2/results.json为后审候选，不能替代原A/B统计或人工gold。下列人工核验、隔离、自然发现和完整三方评测任务仍未完成。
 
 1. 人工核验local/data-v3/HUMAN_REVIEW_QUEUE.md。72候选可按风险和类目先取少量，逐字段填写human_id/confirmed_at/evidence_refs/verified_fields及正确中文；勿直接全批批准历史中文。优先核对Action四月合成身份/七月污染、Amazon版本漂移/配置归属/截断。此目录未上传，需原开发机或重新授权读取原货盘。
