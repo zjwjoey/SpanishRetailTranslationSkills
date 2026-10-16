@@ -1,0 +1,8 @@
+{
+  "test": "Reject archived real source-echo candidate",
+  "status": "EXPECTED_REJECTION",
+  "exit_code": 1,
+  "observed_error": "source echo is not translation",
+  "private_fixture": "local/amazon-r2/checks/guard-fixture",
+  "semantics": "Does not establish translation accuracy; exact invalid wrapper is mechanically rejected."
+}
