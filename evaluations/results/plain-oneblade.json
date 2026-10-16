@@ -1,0 +1,246 @@
+{
+  "baseline": "plain_codex_no_professional_skill",
+  "status": "CANDIDATE",
+  "notice": "手工构造的 synthetic 工程用例；以下为源文翻译候选，不是真实商品事实核验。",
+  "identity": {
+    "item_id": "synthetic-oneblade-001",
+    "is_synthetic": true,
+    "platform": "amazon",
+    "product_id": "SYNTHETIC-NOT-ASIN",
+    "parent_asin": null,
+    "variant": null
+  },
+  "source_snapshot": {
+    "label": "MANUAL_ENGINEERING_FIXTURE_V3",
+    "sha256": "c7b6483b079ae85e08ebf4e5151945219cb3e73186a064560859cc4ed74bba71",
+    "captured_at": null
+  },
+  "source_locations": {
+    "source": {
+      "fixture": "evaluations/fixtures/oneblade.synthetic.json",
+      "note": "手工构造，不是用户历史数据或官方商品事实"
+    }
+  },
+  "original_source": {
+    "title": "PHILIPS OneBlade 360 QP2734/30 - Afeitadora híbrida, 2 Cuchillas 360, Peine-Guía Ajustable 5 en 1, 60 minutos",
+    "brand": "PHILIPS",
+    "categories": [
+      "Belleza",
+      "Afeitado y depilación"
+    ],
+    "specifications": [
+      {
+        "key": "Modelo",
+        "value": "QP2734/30"
+      },
+      {
+        "key": "Contenido total del paquete",
+        "value": "1 Cuchilla 360"
+      },
+      {
+        "key": "Autonomía",
+        "value": "60 minutos"
+      }
+    ],
+    "bullets": [
+      "Incluye 2 Cuchillas 360 y un Peine-Guía Ajustable 5 en 1.",
+      "Incluye 2 Cuchillas 360 y un Peine-Guía Ajustable 5 en 1."
+    ],
+    "description": "PHILIPS OneBlade 360 QP2734/30 - Afeitadora híbrida, 2 Cuchillas 360, Peine-Guía Ajustable 5 en 1, 60 minutos. Recorta, perfila y afeita. Batería recargable con autonomía de 60 minutos. Accesorio compatible con... Ver más",
+    "details": [
+      {
+        "key": "Marca",
+        "value": "PHILIPS"
+      },
+      {
+        "key": "Serie",
+        "value": "OneBlade 360"
+      },
+      {
+        "key": "Contenido total del paquete",
+        "value": "1 Cuchilla 360"
+      },
+      {
+        "key": "Texto de página",
+        "value": "Ver más"
+      }
+    ],
+    "platform_metadata": {
+      "ASIN": "SYNTHETIC-NOT-ASIN",
+      "Clasificación": "nº 12 en Afeitado",
+      "Valoración": "4,5 de 5",
+      "Opiniones": "1.234"
+    }
+  },
+  "source_verification_status": "RAW",
+  "source_verification": null,
+  "chinese": {
+    "name": "PHILIPS OneBlade 360 QP2734/30 混合式剃须刀",
+    "category": {
+      "source": [
+        "Belleza",
+        "Afeitado y depilación"
+      ],
+      "translation": [
+        "美容",
+        "剃须与脱毛"
+      ],
+      "research_category": "剃须刀",
+      "basis": "根据 title 的 Afeitadora 推断商品类型"
+    },
+    "specifications": [
+      {
+        "name": "型号",
+        "value": "QP2734/30",
+        "source_fields": [
+          "source.title",
+          "source.specifications[0]"
+        ]
+      },
+      {
+        "name": "续航时间",
+        "value": "60分钟",
+        "source_fields": [
+          "source.title",
+          "source.specifications[2]",
+          "source.description"
+        ]
+      },
+      {
+        "name": "导向梳",
+        "value": "五合一可调节导向梳",
+        "source_fields": [
+          "source.title",
+          "source.bullets[0]",
+          "source.bullets[1]"
+        ]
+      },
+      {
+        "name": "360刀片数量",
+        "value": null,
+        "status": "REVIEW_REQUIRED",
+        "conflicting_claims": [
+          {
+            "value": "2片360刀片",
+            "source_fields": [
+              "source.title",
+              "source.bullets[0]",
+              "source.bullets[1]",
+              "source.description"
+            ]
+          },
+          {
+            "value": "1片360刀片",
+            "source_fields": [
+              "source.specifications[1]",
+              "source.details[2]"
+            ]
+          }
+        ]
+      }
+    ],
+    "description": "可修剪、修整轮廓和剃须。配有可充电电池，续航时间为60分钟；附五合一可调节导向梳。360刀片数量存在源文冲突，需核实。",
+    "description_provenance": [
+      {
+        "text": "可修剪、修整轮廓和剃须",
+        "source_field": "source.description",
+        "source_span": "Recorta, perfila y afeita."
+      },
+      {
+        "text": "可充电电池，续航时间为60分钟",
+        "source_field": "source.description",
+        "source_span": "Batería recargable con autonomía de 60 minutos."
+      },
+      {
+        "text": "五合一可调节导向梳",
+        "source_field": "source.bullets[0]",
+        "source_span": "un Peine-Guía Ajustable 5 en 1"
+      }
+    ]
+  },
+  "identifiers": {
+    "brand": "PHILIPS",
+    "series": "OneBlade 360",
+    "model": "QP2734/30",
+    "platform_ASIN_field": "SYNTHETIC-NOT-ASIN",
+    "is_real_asin": false
+  },
+  "platform_metadata": [
+    {
+      "name": "剃须类排名",
+      "value": 12,
+      "source_field": "source.platform_metadata.Clasificación",
+      "original": "nº 12 en Afeitado"
+    },
+    {
+      "name": "评分",
+      "value": 4.5,
+      "out_of": 5,
+      "source_field": "source.platform_metadata.Valoración",
+      "original": "4,5 de 5"
+    },
+    {
+      "name": "评论数",
+      "value": 1234,
+      "source_field": "source.platform_metadata.Opiniones",
+      "original": "1.234",
+      "interpretation": "按西班牙语数字格式将点理解为千位分隔符"
+    }
+  ],
+  "uncertainties": [
+    {
+      "issue": "包装刀片数量互相矛盾",
+      "evidence": "标题、bullets、描述为2片；specifications、details为1片。",
+      "resolution": null
+    },
+    {
+      "issue": "配件兼容信息截断",
+      "source_field": "source.description",
+      "source_span": "Accesorio compatible con... Ver más",
+      "resolution": "无法确定兼容对象或完整句意；不补全兼容型号。"
+    },
+    {
+      "issue": "无法验证真实商品、变体及采集时间",
+      "evidence": "is_synthetic=true；parent_asin、variant、captured_at为null；来源注明手工构造。",
+      "resolution": null
+    },
+    {
+      "issue": "混合式剃须刀的技术含义未进一步说明",
+      "source_field": "source.title",
+      "source_span": "Afeitadora híbrida",
+      "resolution": "采用字面译法，不推定动力、电池或刀头技术细节。"
+    }
+  ],
+  "handling_notes": [
+    {
+      "source_fields": [
+        "source.bullets[0]",
+        "source.bullets[1]"
+      ],
+      "handling": "两条完全重复，中文描述合并表达一次，原文保留。"
+    },
+    {
+      "source_field": "source.description",
+      "handling": "开头重复标题，型号和属性分别放入名称、标识及规格；修剪用途与电池信息进入描述；截断兼容句单列不确定项。"
+    },
+    {
+      "source_field": "source.details[3]",
+      "handling": "Ver más译为“查看更多”，作为页面提示记录，不进入商品描述。"
+    },
+    {
+      "source_field": "source.platform_metadata",
+      "handling": "平台排名、评分、评论数单列研究元数据。"
+    }
+  ],
+  "process": {
+    "method": "模型根据允许读取的源文手工构造中文候选；Python仅组装JSON，不承担翻译。",
+    "professional_skills_loaded": false,
+    "external_lookup": false,
+    "paid_api_used": false,
+    "model": "unknown",
+    "token_usage": null,
+    "independent_review": "NOT_RUN",
+    "human_verification": "NOT_VERIFIED",
+    "timing": "记录另见plain-oneblade-run.md"
+  }
+}

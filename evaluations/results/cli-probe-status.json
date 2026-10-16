@@ -1,0 +1,16 @@
+{
+  "cli_version": "0.137.0-alpha.4",
+  "mode": "ignore-user-config; ephemeral; read-only",
+  "test_request": "17+25; no tools or skills",
+  "exit_code": 1,
+  "actual_error": {
+    "type": "error",
+    "status": 400,
+    "error": {
+      "type": "invalid_request_error",
+      "message": "The 'gpt-5.5' model is not supported when using Codex with a ChatGPT account."
+    }
+  },
+  "automatic_discovery": "NOT_VERIFIED",
+  "user_config_modified": false
+}

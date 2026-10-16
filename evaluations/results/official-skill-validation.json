@@ -1,0 +1,32 @@
+[
+  {
+    "skill": "es-retail-category",
+    "sha256": "91d41eec8dcdcd1da56ff13e67a352a355dc5d4030df0036f340981f27e4dfcf",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "es-retail-learning",
+    "sha256": "3488c7e86e53fa28d967572b3e4b57863a4073637697b283563ea436e8f22062",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "es-retail-reviewer",
+    "sha256": "9192e965fdff3903e9a013d664c3a69b7ab87286f4d7c31d3890327a0fc355f4",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "es-retail-terminology",
+    "sha256": "b0641bd975659788f86c52b604e5b4eaa81e340a8890613dfb07a137293dbbb5",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "es-retail-translator",
+    "sha256": "d1421bdbd95d75032574ac1e35b060e474d7d5dd1ab2764db34fcd5ec8999e00",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  }
+]

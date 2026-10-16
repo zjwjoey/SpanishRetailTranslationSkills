@@ -1,0 +1,18 @@
+{
+  "output_schemas": [
+    {
+      "file": "oneblade-translation.json",
+      "schema": "PASS"
+    },
+    {
+      "file": "oneblade-post-audit.json",
+      "schema": "PASS"
+    },
+    {
+      "file": "oneblade-candidate-2-post-audit.json",
+      "schema": "PASS"
+    }
+  ],
+  "private_candidates_input_schema_pass": 72,
+  "historical_provenance_available": 72
+}

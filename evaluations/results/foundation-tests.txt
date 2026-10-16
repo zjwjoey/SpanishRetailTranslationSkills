@@ -1,0 +1,21 @@
+test_ai_verified_rejected (__main__.FoundationChecks.test_ai_verified_rejected) ... ok
+test_all_schema_documents (__main__.FoundationChecks.test_all_schema_documents) ... ok
+test_conflict_cannot_pass (__main__.FoundationChecks.test_conflict_cannot_pass) ... ok
+test_dedup_requires_canonical_reference (__main__.FoundationChecks.test_dedup_requires_canonical_reference) ... ok
+test_duplicate_key_rejected (__main__.FoundationChecks.test_duplicate_key_rejected) ... ok
+test_exact_five_skills (__main__.FoundationChecks.test_exact_five_skills) ... ok
+test_frontmatter_and_links (__main__.FoundationChecks.test_frontmatter_and_links) ... ok
+test_missing_identity_rejected (__main__.FoundationChecks.test_missing_identity_rejected) ... ok
+test_missing_ledger_canonical_rejected (__main__.FoundationChecks.test_missing_ledger_canonical_rejected) ... ok
+test_missing_preservation_proof_rejected (__main__.FoundationChecks.test_missing_preservation_proof_rejected) ... ok
+test_source_span_and_ledger_control (__main__.FoundationChecks.test_source_span_and_ledger_control) ... ok
+test_structured_ledger_source_reference (__main__.FoundationChecks.test_structured_ledger_source_reference) ... ok
+test_synthetic_input (__main__.FoundationChecks.test_synthetic_input) ... ok
+test_translator_cannot_approve (__main__.FoundationChecks.test_translator_cannot_approve) ... ok
+test_unverified_holdout_rejected (__main__.FoundationChecks.test_unverified_holdout_rejected) ... ok
+test_wrong_quote_rejected (__main__.FoundationChecks.test_wrong_quote_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.405s
+
+OK
