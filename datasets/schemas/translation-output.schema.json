@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Translation output 1.0.0-foundation",
+  "type": "object",
+  "required": [
+    "item_id",
+    "product_id",
+    "source_snapshot",
+    "platform",
+    "stage",
+    "status",
+    "translation_zh",
+    "identifiers",
+    "research_metadata",
+    "field_alignment",
+    "protected_identifiers",
+    "retained_facts",
+    "uncertainties",
+    "conflicts",
+    "review",
+    "run_metadata"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "product_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_snapshot": {
+      "type": "object",
+      "required": [
+        "label",
+        "sha256",
+        "captured_at"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "captured_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "platform": {
+      "enum": [
+        "action",
+        "amazon"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "TRANSLATION_CANDIDATE",
+        "TRANSLATION_AUDIT"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PASSED",
+        "REVIEW_REQUIRED",
+        "FAILED"
+      ]
+    },
+    "translation_zh": {
+      "type": "object"
+    },
+    "identifiers": {
+      "type": "object"
+    },
+    "research_metadata": {
+      "type": "object"
+    },
+    "field_alignment": {
+      "type": "array"
+    },
+    "protected_identifiers": {
+      "type": "array"
+    },
+    "retained_facts": {
+      "type": "array"
+    },
+    "uncertainties": {
+      "type": "array"
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "review": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "run_metadata": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "TRANSLATION_CANDIDATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "REVIEW_REQUIRED",
+              "FAILED"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "PASSED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "type": "object",
+            "required": [
+              "mode",
+              "independence_method",
+              "checked_fields",
+              "unreviewed_fields",
+              "candidate_findings"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
