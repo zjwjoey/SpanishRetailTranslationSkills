@@ -5,7 +5,7 @@ description: 将 Action、Amazon 零售商品的西班牙语名称、规格、�
 
 # 西语零售商品翻译
 
-版本 `1.0.1-candidate-r3`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
+版本 `1.0.1-candidate-r3a2`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
 
 开始读取[输入契约](../../../contracts/ITEM_INPUT_CONTRACT.md)、[输出契约](../../../contracts/TRANSLATION_OUTPUT_CONTRACT.md)及[交接约定](../../../contracts/SKILL_HANDOFF.md)。使用[approved manifest](../../../knowledge/approved/manifest.json)中实际存在且语境适用的批准知识，遵守[知识政策](../../../knowledge/approved/KNOWLEDGE_POLICY.md)。收到前置动作时另读[SOURCE_AUDIT 契约](../../../contracts/SOURCE_AUDIT_CONTRACT.md)；分级按[质量契约](../../../contracts/QUALITY_AND_SEVERITY.md)。本Skill不依赖local脚本。
 
@@ -18,7 +18,7 @@ description: 将 Action、Amazon 零售商品的西班牙语名称、规格、�
 ## 生成候选
 
 1. 检查稳定标识、源快照、字段映射及重复JSON key；重复属性保留有序key/value数组，不静默覆盖。身份无法确定、关键原文不可得则 `FAILED`，保留已知身份和失败证据。仅给名称可产生部分候选，其他字段null；缺口进入uncertainties，不能补造规格。
-2. 按完整源核对主体、用途、选中变体、材质、尺寸轴、功能、包装层次、兼容对象及限定词。不从父商品、兄弟变体、旧快照或历史中文补本商品属性。批准术语仅在适用语境内采用；无知识词条时可译清楚部分，歧义保留源词、候选及待核问题。
+2. 生成中文前按源字段顺序逐分句建重要声明清单，记录对象、属性/用途、值及限定；不能从已有译文反推清单。再核对主体、选中变体、材质、尺寸轴、功能、包装层次和兼容对象。不从父商品、兄弟变体、旧快照或历史中文补属性。批准术语仅在适用语境内采用；无知识词条时可译清楚部分，歧义保留源词、候选及待核问题。
 3. 应用SOURCE_AUDIT时逐项保留decision_id与账本。TRANSLATE进入对应字段；PRESERVE原串进入identifiers/brand等实际目标；METADATA实际值进入research_metadata；DEDUPLICATE引用canonical_decision_id且确认无独有事实；EXCLUDE_FROM_DESCRIPTION的完整源保存在source_archive/不可变源引用。REVIEW_REQUIRED不产生确定替代值。发现动作误删或源与结论不符，记录分歧并待审，不能照单丢事实。
 4. 按字段用途译自然中文：名称突出商品主体，规格保留数值与结构，卖点保留功能及限定，描述可合并等价重复但保留事实去向。品牌可独立保存，系列/型号/技术代码不可改写；兼容品牌须保留“适用于”等关系，不变成制造品牌。没有无品牌命名的普遍要求；标题压缩或用户指定品牌单列时必须提供迁移证据。
 5. 数字与单位按语义核对：`2 x 500 ml`是2件、每件500ml，不能只写1000ml；`5 en 1`不等于5件；`12 L/día`不等于12L水箱。小数`1,5`可规范为1.5，`1.000`含义不明先待核。保留范围、约值、否定、最高值、混款、包装组成与来源声称，不把声称写成已验证结论。

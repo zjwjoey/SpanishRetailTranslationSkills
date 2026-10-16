@@ -5,7 +5,7 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 
 # 商品前后置审查
 
-版本 `1.0.2-candidate-r3`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
+版本 `1.0.2-candidate-r3a2`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
 
 ## 入口与契约
 
