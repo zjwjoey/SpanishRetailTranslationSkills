@@ -32,5 +32,15 @@
   "requested_subagent_model": "gpt-5.6-luna",
   "observed_model": "unknown",
   "tokens": null,
-  "cost": null
+  "cost": null,
+  "old_issue_identity_review": {
+    "total": 49,
+    "specific_fact_or_wording_restored": 12,
+    "partial": 17,
+    "unresolved": 15,
+    "out_of_scope_english": 5,
+    "root_individually_reviewed": 49,
+    "whole_sku_acceptance": false,
+    "human_gold": false
+  }
 }

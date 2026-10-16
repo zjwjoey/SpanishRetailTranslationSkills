@@ -1,0 +1,155 @@
+{
+  "phase": "amazon-r2-final",
+  "status": "CANDIDATE_REGRESSION_FAILED",
+  "completed_execution": true,
+  "rule_commit": "e88c30f",
+  "requested_subagent_model": "gpt-5.6-luna",
+  "observed_backend": "unknown",
+  "root_model": "unknown",
+  "old_regression": {
+    "counts": {
+      "generated": 200,
+      "audited": 200,
+      "candidate_facts": 2246,
+      "quarantined_facts": 275,
+      "sku_with_quarantine": 107,
+      "retained_text_facts": 1944
+    },
+    "raw_ai_findings": {
+      "P1": 204,
+      "P2": 17,
+      "P0": 7
+    },
+    "raw_ai_issue_types": {
+      "OMISSION": 159,
+      "OTHER": 24,
+      "MATERIAL": 3,
+      "IDENTIFIER": 17,
+      "ROLE": 4,
+      "NUMBER": 8,
+      "OVER_QUARANTINE": 13
+    },
+    "root_source_first_supplement": 1,
+    "old_issue_identity_review": {
+      "total": 49,
+      "specific_fact_or_wording_restored": 12,
+      "partial": 17,
+      "unresolved": 15,
+      "out_of_scope_english": 5
+    }
+  },
+  "new_forward_diagnostic": {
+    "counts": {
+      "generated": 100,
+      "audited": 100,
+      "candidate_facts": 4310,
+      "quarantined_facts": 828,
+      "sku_with_quarantine": 95,
+      "retained_text_facts": 3346
+    },
+    "raw_ai_findings": {
+      "P1": 159,
+      "P2": 15
+    },
+    "raw_ai_issue_types": {
+      "IDENTIFIER": 20,
+      "OMISSION": 93,
+      "OVER_QUARANTINE": 17,
+      "OTHER": 16,
+      "MATERIAL": 2,
+      "NUMBER": 17,
+      "ROLE": 9
+    },
+    "root_opinion_dispositions": {
+      "CONFIRMED_EXPORT_ROLE_GAP_NOT_CHILD_ERROR": 13,
+      "DOWNGRADED_P2_ALIGNMENT_NOT_WEIGHT_LOSS": 1,
+      "DOWNGRADED_P2_SOURCE_EXPORT_GAP_NOT_NUMBER_ERROR": 5,
+      "DOWNGRADED_P2_NATIVE_EXPORT_STRUCTURE_GAP": 10
+    },
+    "not_all_source_records_spanish": true,
+    "first_pass_acceptance_rate": "NOT_ESTABLISHED"
+  },
+  "selection_isolation": {
+    "historical_exposed_asins": 286,
+    "historical_asin_overlap": 0,
+    "known_parent_overlap": 0,
+    "repeated_known_new_parents": 0,
+    "new_parent_missing": 15
+  },
+  "unresolved_near_duplicate_pairs": 2,
+  "source_workbook_unchanged": true,
+  "original_pilot_candidates_unchanged": true,
+  "frozen_files": {
+    "freeze.json": {
+      "files": 32,
+      "mismatches": 0
+    },
+    "checks/regression-candidates-freeze.json": {
+      "files": 146,
+      "mismatches": 0
+    },
+    "checks/regression-audits-freeze.json": {
+      "files": 146,
+      "mismatches": 0
+    },
+    "checks/new-candidates-freeze.json": {
+      "files": 300,
+      "mismatches": 0
+    },
+    "checks/new-audits-freeze.json": {
+      "files": 200,
+      "mismatches": 0
+    }
+  },
+  "frozen_manifest_sha256": {
+    "freeze.json": "3af743333c43e64bdee6fbeecb7d8aa42e9925b709b1a4a43fb7bc7addffc8a5",
+    "checks/regression-candidates-freeze.json": "8a6d0575bb2cc5fe6ad704b74549f6bddf63fc0a1d6db03a41604143f9a89f75",
+    "checks/regression-audits-freeze.json": "f2c99bbe7c46f200ea328d076f66fa97e6b5fa49d00b0d605f990875d40097cc",
+    "checks/new-candidates-freeze.json": "67f2cf5f22d35078a27dc94f43985bc2bd828689a9f720f5b66d86df2d447915",
+    "checks/new-audits-freeze.json": "127505c2b9d1321b3bd16926cc6fcce2894cfa1ab036185f1721b9740bdade25"
+  },
+  "complete_binding_check": "PASSED_BINDINGS_ONLY",
+  "safe_view_invariants": "PASSED_SAFE_VIEW_INVARIANTS_ONLY",
+  "provenance_check": "PASSED_PROVENANCE_ONLY",
+  "foundation_tests": {
+    "passed": 17,
+    "total": 17
+  },
+  "skill_structure_validation": {
+    "passed": 5,
+    "total": 5
+  },
+  "native_full_schema": "NOT_RUN_COMPACT_INTERMEDIATE",
+  "automatic_discovery": "NOT_RUN",
+  "plain_codex_baseline": "NOT_RUN",
+  "upstream_baseline": "NOT_RUN",
+  "formal_datasets": {
+    "train": 0,
+    "validation": 0,
+    "holdout": 0
+  },
+  "human_confirmed": 0,
+  "approved_knowledge_changed": false,
+  "accuracy": "NOT_ESTABLISHED",
+  "full_sku_translation_acceptance": "NOT_ESTABLISHED",
+  "tokens": null,
+  "cost": null,
+  "git_branch": "feature/foundation-v1",
+  "pushed_this_round": false,
+  "raw_data_uploaded": false,
+  "note": "Raw AI opinions are not confirmed independent errors or accuracy. Safe view is a filtered fact review table, not a complete accepted SKU translation. Review instructions clarified during run; no identical-procedure causal gain claimed.",
+  "targeted_case_view_checks": {
+    "status": "PASSED_RECORDED_CASE_VIEW_CHECKS",
+    "cases": {
+      "069_correct_core_2cm_retained_bad_composed_not_exported": true,
+      "079_wrong_generation_as_count_masked": true,
+      "003_correct_child_kept_parent_source_identity_exported": true,
+      "023_clear_spanish_gray_kept": true,
+      "052_load_conflict_all_recorded_core_occurrences_masked": true,
+      "066_conflicted_weight_masked_composed_title_not_exported": true
+    },
+    "semantic_accuracy": "NOT_ESTABLISHED",
+    "raw_candidates_modified": false
+  },
+  "derived_review_delivery_freeze_sha256": "c481362d3321959ec85e131cd6869c146106428ce014b6b2aab1657807cd8998"
+}

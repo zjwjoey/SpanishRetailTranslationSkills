@@ -2,7 +2,9 @@
 
 当前执行授权（Amazon第二轮）：先修订局部隔离、事实覆盖及材质/部件角色规则，冻结后重新处理原200个商品，并用gpt-5.6-luna子智能体验证100个不同的新商品。原200只作已曝光回归，新100为无人工金标的前向工程验证，不称Holdout；确认不了的事实槽继续排除，其余明确事实保留。原输出不可覆盖，不自动推送或升级approved知识。
 
-当前进展（2026-10-16）：Amazon 200 SKU已按两个100条业务批次、gpt-5.6-luna子智能体完成生成和独立AI核对。隔离485段、涉及156个SKU，保留149条标题候选；发现局部隔离过粗、事实覆盖及部件角色问题。全部仍为候选，人工金标0，未扩大到5000条，规则版本未修改。详见[统一核对报告](reports/AMAZON_200_PILOT_REVIEW.md)及[执行协议](evaluations/AMAZON_200_PILOT_PROTOCOL.md)。
+当前进展（2026-10-17）：Amazon第二轮已修改Translator、Reviewer和Terminology三项Skills，冻结32个规则/契约/知识文件，完成旧200重生成与独立AI核对，以及gpt-5.6-luna新100生成和独立AI核对。300条最终绑定和源hash检查通过，但生产质量回归失败：49条旧P1问题中12条具体事实/词义恢复、17条部分恢复、15条未解决、5条英文源不计西语验证。新100仍发现兼容清单遗漏、角色误判和合成目标不一致；原始AI意见不是准确率。查看版按已记录问题隔离事实槽，全部保持Candidate；人工确认和正式Train/Validation/Holdout均0，未扩大5000、未推送远端。详见[第二轮最终核对报告](reports/AMAZON_R2_FINAL_REVIEW.md)、[原200回归](reports/AMAZON_R2_REGRESSION.md)和[执行协议](evaluations/AMAZON_R2_PROTOCOL.md)。
+
+历史首轮（2026-10-16）：Amazon 200 SKU按两个100条业务批次完成生成和独立AI核对；当时隔离485段、涉及156个SKU，保留149条标题候选，尚未修改规则。这些旧分段统计不能与第二轮事实槽数直接比较。详见[首轮统一核对报告](reports/AMAZON_200_PILOT_REVIEW.md)及[首轮执行协议](evaluations/AMAZON_200_PILOT_PROTOCOL.md)。
 
 > 面向西班牙语零售商品货盘的 **Codex 原生专业翻译 Skills**：以 Action 与 Amazon.es 的真实商品数据为基础，形成可追溯、可评测、可持续优化的西班牙语 → 简体中文商品翻译能力。
 
