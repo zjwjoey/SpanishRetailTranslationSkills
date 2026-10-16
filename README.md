@@ -8,7 +8,7 @@
 
 2026-10-16用户新增授权：在原Action/Amazon范围外接入IKEA西班牙只读货盘，使用`gpt-5.6-luna`子智能体，每批100个SKU，先完成首个1000，再核对并提出调优；第二个1000须在首轮核对/调优后使用不同商品。此为无历史译文的候选生成与工程调优，不将AI结果自动升级为人工标准答案；五Skill数量、语言和正式训练准入规则不变。不修改IKEASKUTracker采集程序、数据库或原始输出。
 
-IKEA首轮已实际生成10批×100＝1000个唯一SKU中文候选，完成全量基础检查及待核字段隔离；统一语义核对与调优尚待执行。范围、失败重试、隔离和本地交付见[`IKEA首1000生成记录`](reports/IKEA_FIRST1000_GENERATION.md)。该进度不表示1000条通过人工质量验收或已获准进入可信训练集。
+IKEA首轮已实际生成并统一AI核对1000个唯一SKU，完成第一轮候选规则调优：修订111个SKU的116个字段，独立复查修订范围；最终查看版隔离98个SKU的108个字段。另以20个新SKU执行旧/新规则实际比较，仍发现术语精度及倍数疑点，保持Candidate，尚未通过人工质量验收。详见[`首1000核对与调优记录`](reports/IKEA_FIRST1000_AUDIT_TUNING_R1.md)及[`原生成记录`](reports/IKEA_FIRST1000_GENERATION.md)。本轮没有启动第二个1000，IKEA可信Training/Validation/Holdout均为0。
 
 2026-10-16 实际开发状态及测试、数据核验和阻塞项见 [`reports/FOUNDATION_ACCEPTANCE.md`](reports/FOUNDATION_ACCEPTANCE.md)。下方目标、路线图和示例仍是验收要求，不代表对应门槛全部通过。
 
