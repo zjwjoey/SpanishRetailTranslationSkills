@@ -9,6 +9,7 @@ datasets/candidates/
 datasets/holdout_answers/
 evaluations/private/
 upstream/checkouts/
+upstream/
 research/checkouts/
 knowledge/proposals/private/
 datasets/private/

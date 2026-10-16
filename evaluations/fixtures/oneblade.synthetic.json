@@ -1,0 +1,72 @@
+{
+  "item_id": "synthetic-oneblade-001",
+  "is_synthetic": true,
+  "platform": "amazon",
+  "product_id": "SYNTHETIC-NOT-ASIN",
+  "parent_asin": null,
+  "variant": null,
+  "source_snapshot": {
+    "label": "MANUAL_ENGINEERING_FIXTURE_V3",
+    "sha256": "c7b6483b079ae85e08ebf4e5151945219cb3e73186a064560859cc4ed74bba71",
+    "captured_at": null
+  },
+  "source": {
+    "title": "PHILIPS OneBlade 360 QP2734/30 - Afeitadora híbrida, 2 Cuchillas 360, Peine-Guía Ajustable 5 en 1, 60 minutos",
+    "brand": "PHILIPS",
+    "categories": [
+      "Belleza",
+      "Afeitado y depilación"
+    ],
+    "specifications": [
+      {
+        "key": "Modelo",
+        "value": "QP2734/30"
+      },
+      {
+        "key": "Contenido total del paquete",
+        "value": "1 Cuchilla 360"
+      },
+      {
+        "key": "Autonomía",
+        "value": "60 minutos"
+      }
+    ],
+    "bullets": [
+      "Incluye 2 Cuchillas 360 y un Peine-Guía Ajustable 5 en 1.",
+      "Incluye 2 Cuchillas 360 y un Peine-Guía Ajustable 5 en 1."
+    ],
+    "description": "PHILIPS OneBlade 360 QP2734/30 - Afeitadora híbrida, 2 Cuchillas 360, Peine-Guía Ajustable 5 en 1, 60 minutos. Recorta, perfila y afeita. Batería recargable con autonomía de 60 minutos. Accesorio compatible con... Ver más",
+    "details": [
+      {
+        "key": "Marca",
+        "value": "PHILIPS"
+      },
+      {
+        "key": "Serie",
+        "value": "OneBlade 360"
+      },
+      {
+        "key": "Contenido total del paquete",
+        "value": "1 Cuchilla 360"
+      },
+      {
+        "key": "Texto de página",
+        "value": "Ver más"
+      }
+    ],
+    "platform_metadata": {
+      "ASIN": "SYNTHETIC-NOT-ASIN",
+      "Clasificación": "nº 12 en Afeitado",
+      "Valoración": "4,5 de 5",
+      "Opiniones": "1.234"
+    }
+  },
+  "source_locations": {
+    "source": {
+      "fixture": "evaluations/fixtures/oneblade.synthetic.json",
+      "note": "手工构造，不是用户历史数据或官方商品事实"
+    }
+  },
+  "verification_status": "RAW",
+  "verification": null
+}
