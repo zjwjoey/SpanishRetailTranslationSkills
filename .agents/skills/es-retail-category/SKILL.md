@@ -24,7 +24,7 @@ description: Interpret Action or Amazon.es Spanish product categories and uses, 
 
 ## 输出
 
-保留原样 `item_id/platform/product_id/source_snapshot`，附完整 `source` 或可访问不可变引用、`contract_version=1.0.0-foundation`、实际 `knowledge_version`（无已批准知识写none-approved）。不得改写source/source_snapshot。
+保留原样 `item_id/platform/product_id/source_snapshot`，附完整 `source` 或可访问不可变引用、`contract_version=1.0.0-foundation`。`knowledge_version`始终取实际manifest版本；批准知识为空用独立`knowledge_status=EVIDENCE_BLOCKED`表达，不能以none-approved替代版本导致跨Skill不一致。不得改写source/source_snapshot。
 
 `category_context` 含交接约定五项：
 

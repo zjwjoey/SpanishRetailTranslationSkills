@@ -231,9 +231,75 @@
           "retained_fact_refs": {
             "type": "array",
             "items": {
-              "type": "string",
-              "minLength": 1
-            }
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "source_field",
+                    "source_span",
+                    "value"
+                  ],
+                  "properties": {
+                    "source_field": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "source_span": {
+                      "type": "object",
+                      "required": [
+                        "quote",
+                        "occurrence",
+                        "start",
+                        "end"
+                      ],
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "start": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "end": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "value": {}
+                  }
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "canonical_decision_id"
+                  ],
+                  "properties": {
+                    "canonical_decision_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "minItems": 1
           }
         }
       }
