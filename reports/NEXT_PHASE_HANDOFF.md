@@ -2,9 +2,11 @@
 
 从本仓库根目录和feature/foundation-v1继续；先读README、AGENTS、CODEX_DEVELOPMENT_PROMPT_V3、FOUNDATION_ACCEPTANCE。
 
-2026-10-16最新：第二轮已实际运行32件新商品及内部修复/回归，但新P1使两次候选均未通过，当前Reviewer恢复1.0.1。先读[第二轮结果与回退](ROUND2_TUNING_REPORT.md)；knowledge/proposals/ROUND2_REVIEWER_CANDIDATE.patch禁止自动应用。原始失败证据及排除问题后的候选字段在local/tuning-round-02，不能当人工gold。下一轮先修Translator目标事实覆盖、字段角色和引用闭合，再冻结新版本/新商品验证。
+2026-10-16最新：第三轮已完成11项暴露回归的初版失败、内部修复及全量复审，并对20件新商品分12/8两版配对验证。先读[第三轮结果](ROUND3_TUNING_REPORT.md)。当前Translator为1.0.1-candidate-r3a2、Reviewer为1.0.2-candidate-r3a2，保留工程候选；修复版回归与追加8件未确认P0/P1，首批持续1项P2及未决保留。local/tuning-round-03/screened-fields保存14个非空值隔离后的20件AI候选，不是人工gold，正式Train/Validation/Holdout仍0。后续先处理已记录作用域P2、未决翻译范围和正式准入/隔离；不启动全货盘或自动第四轮。
 
-2026-10-16更新：第一轮工程候选调优及24件新商品配对验证已执行，先读[本轮真实结果与证据](ROUND1_TUNING_REPORT.md)。Reviewer为1.0.1-candidate-r1；正式人工知识和Train/Validation/Holdout准入仍0。local/tuning-round-01/post-review/attempt2/results.json为后审候选，不能替代原A/B统计或人工gold。下列人工核验、隔离、自然发现和完整三方评测任务仍未完成。
+历史第二轮：曾实际运行32件新商品及内部修复/回归，新P1使两次候选均未通过，当时Reviewer恢复1.0.1。见[第二轮结果与回退](ROUND2_TUNING_REPORT.md)；knowledge/proposals/ROUND2_REVIEWER_CANDIDATE.patch禁止自动应用。原始失败证据及排除问题后的候选字段在local/tuning-round-02，不能当人工gold。
+
+历史第一轮：工程候选调优及24件新商品配对验证已执行，见[当轮真实结果与证据](ROUND1_TUNING_REPORT.md)。当时Reviewer为1.0.1-candidate-r1；正式人工知识和Train/Validation/Holdout准入仍0。local/tuning-round-01/post-review/attempt2/results.json为后审候选，不能替代原A/B统计或人工gold。下列人工核验、隔离、自然发现和完整三方评测任务仍未完成。
 
 1. 人工核验local/data-v3/HUMAN_REVIEW_QUEUE.md。72候选可按风险和类目先取少量，逐字段填写human_id/confirmed_at/evidence_refs/verified_fields及正确中文；勿直接全批批准历史中文。优先核对Action四月合成身份/七月污染、Amazon版本漂移/配置归属/截断。此目录未上传，需原开发机或重新授权读取原货盘。
 2. 先确认稳定源，再按同款/父子/近重复/跨快照/跨平台关系分组；人工确认不足就小样本。按组建立train/validation；真正Holdout交独立权限保管，共享目录不算隔离。本轮所有候选已暴露，正式盲测要新样本。
