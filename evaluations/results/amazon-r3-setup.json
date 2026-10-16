@@ -1,6 +1,6 @@
 {
   "stage": "R3_RULES_AND_ENGINEERING_GATES",
-  "status": "REGRESSION_REOPENED_REVIEW_INDEPENDENCE_PENDING",
+  "status": "REGRESSION_SCOPED_COMPLETE_NEW1000_IN_PROGRESS",
   "parent_commit": "43c3eff",
   "requested_new_spanish_skus": 1000,
   "replaces_initial_target": 100,
@@ -33,7 +33,7 @@
     "corrected_metadata_mismatches": 0
   },
   "real_regression_cases": 6,
-  "real_regression_acceptance": "4_INDEPENDENT_ADMITTED_2_PROCESS_REJECTED_PENDING_REVIEW",
+  "real_regression_acceptance": "6_GENERATED_6_INDEPENDENT_AI_AUDITS_0P0_0P1_3P2_SOURCE_UNCERTAINTIES_LOCAL_NULL",
   "native_schema": "ACTUALLY_CHECKED_PER_EMITTED_CANDIDATE",
   "automatic_skill_discovery": "NOT_RUN",
   "formal_datasets": {
@@ -45,5 +45,7 @@
   "requested_subagent_model": "gpt-5.6-luna",
   "observed_model": "unknown",
   "approved_changed": false,
-  "pushed": false
+  "pushed": false,
+  "real_regression_final_facts": 355,
+  "earlier_independence_gate_reopened_and_reviews_rejected": true
 }
