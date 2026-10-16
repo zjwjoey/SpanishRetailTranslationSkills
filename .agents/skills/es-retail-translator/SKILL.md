@@ -5,7 +5,7 @@ description: 将 Action、Amazon、IKEA西班牙零售商品的西班牙语名�
 
 # 西语零售商品翻译
 
-版本 `1.0.2-candidate-ikea01`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
+版本 `1.0.3-candidate-ikea-r1`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
 
 开始读取[输入契约](../../../contracts/ITEM_INPUT_CONTRACT.md)、[输出契约](../../../contracts/TRANSLATION_OUTPUT_CONTRACT.md)及[交接约定](../../../contracts/SKILL_HANDOFF.md)。使用[approved manifest](../../../knowledge/approved/manifest.json)中实际存在且语境适用的批准知识，遵守[知识政策](../../../knowledge/approved/KNOWLEDGE_POLICY.md)。收到前置动作时另读[SOURCE_AUDIT 契约](../../../contracts/SOURCE_AUDIT_CONTRACT.md)；分级按[质量契约](../../../contracts/QUALITY_AND_SEVERITY.md)。本Skill不依赖local脚本。
 
@@ -40,3 +40,5 @@ run_metadata记录实际读过的Skills、契约/知识版本、输入hash、模
 ## 验证与边界
 
 按需读取[synthetic案例](references/cases.md)，覆盖触发/非触发、正常、局部冲突、截断及失败。案例只演示机制，不是批准知识、真实数据训练或自动发现证据。保存候选至用户授权目标，原始货盘与knowledge/approved只读；不调用收费服务、不引入常驻翻译引擎。
+
+IKEA长描述或多部件材料还须读取[分句覆盖与部件归属复核](references/ikea-coverage-r1.md)，逐项落实后再交接。

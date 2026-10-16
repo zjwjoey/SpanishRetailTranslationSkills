@@ -5,7 +5,7 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 
 # 西语零售术语与标识保护
 
-版本 `0.2.0-foundation`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
+版本 `0.2.1-candidate-ikea-r1`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
 
 ## 输入和适用范围
 
@@ -31,3 +31,5 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 运行状态仅 `PASSED/REVIEW_REQUIRED/FAILED`：`PASSED` 仅表示已检查范围的术语与保护判断无未决问题，候选仍非人工批准；有未知词、语义/源冲突、必要语境缺失则 `REVIEW_REQUIRED`；无法可靠定位身份或源则 `FAILED`。数据核验状态与运行状态分开。
 
 把完整源、候选依据和保护清单交Reviewer.SOURCE_AUDIT或Translator；未决问题不得伪装已解决。学习所需人工确认由后续流程处理，本Skill不写正式知识库。按需读 [合成场景](references/cases.md) 核对正常、异常、失败与跨Skill边界。
+
+IKEA家具、部件、聚合物或染色工艺歧义须读取[IKEA材质与部件消歧](references/ikea-material-role.md)。

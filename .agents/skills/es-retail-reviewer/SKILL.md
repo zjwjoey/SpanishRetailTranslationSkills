@@ -5,7 +5,7 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 
 # 商品前后置审查
 
-版本 `1.0.2-candidate-r3a2`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
+版本 `1.0.3-candidate-ikea-r1`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
 
 ## 入口与契约
 
@@ -44,3 +44,5 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 ## 例证与检查
 
 按需读[手工合成案例及演练场景](references/cases.md)，含正常、异常、失败、触发与非触发情形。全部明确synthetic，不是用户历史货盘。静态检查、显式载入演练、自然发现与人工gold质量四层证据分别报告；案例预期不等于测试已执行，不以合成通过宣称真实质量提升。
+
+IKEA审查及紧凑中间件输入须先读[输入形态与漏译复核](references/ikea-audit-r1.md)，明确字段映射、分句覆盖和误报边界。
