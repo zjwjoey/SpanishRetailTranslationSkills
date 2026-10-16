@@ -1,13 +1,15 @@
 ---
 name: es-retail-translator
-description: 将 Action、Amazon 零售商品的西班牙语名称、规格、卖点、描述及来源类目译成简体中文，保留商品事实、保护标识和源文对齐。用于 es-ES → zh-CN 商品翻译；不用于其他语言方向、纯中文润色、前置筛选或独立质量验收。
+description: 将 Action、Amazon、IKEA西班牙零售商品的西班牙语名称、规格、卖点、描述及来源类目译成简体中文，保留商品事实、保护标识和源文对齐。用于 es-ES → zh-CN 商品翻译；不用于其他语言方向、纯中文润色、前置筛选或独立质量验收。
 ---
 
 # 西语零售商品翻译
 
-版本 `1.0.1-candidate-r3a2`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
+版本 `1.0.2-candidate-ikea01`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
 
 开始读取[输入契约](../../../contracts/ITEM_INPUT_CONTRACT.md)、[输出契约](../../../contracts/TRANSLATION_OUTPUT_CONTRACT.md)及[交接约定](../../../contracts/SKILL_HANDOFF.md)。使用[approved manifest](../../../knowledge/approved/manifest.json)中实际存在且语境适用的批准知识，遵守[知识政策](../../../knowledge/approved/KNOWLEDGE_POLICY.md)。收到前置动作时另读[SOURCE_AUDIT 契约](../../../contracts/SOURCE_AUDIT_CONTRACT.md)；分级按[质量契约](../../../contracts/QUALITY_AND_SEVERITY.md)。本Skill不依赖local脚本。
+
+platform=ikea时先读[IKEA输入与字段角色](references/ikea-input.md)，保留实际contract_extension。
 
 ## 输入与交接
 

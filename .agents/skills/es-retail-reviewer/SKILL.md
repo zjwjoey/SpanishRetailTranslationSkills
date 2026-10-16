@@ -1,6 +1,6 @@
 ---
 name: es-retail-reviewer
-description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商品事实、保护标识、元数据、重复及噪声；TRANSLATION_AUDIT在翻译后独立检查中文事实、误删和虚构。适用于Action/Amazon.es源字段筛选或西中译文审核，不用于生成整篇初译、其他语向或纯中文润色。
+description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商品事实、保护标识、元数据、重复及噪声；TRANSLATION_AUDIT在翻译后独立检查中文事实、误删和虚构。适用于Action/Amazon.es/IKEA西班牙源字段筛选或西中译文审核，不用于生成整篇初译、其他语向或纯中文润色。
 ---
 
 # 商品前后置审查

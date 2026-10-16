@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Retail item input 1.0.0-foundation",
+  "title": "Retail item input 1.0.0-foundation + ikea-es-v1-candidate",
   "type": "object",
   "required": [
     "item_id",
@@ -46,7 +46,8 @@
     "platform": {
       "enum": [
         "action",
-        "amazon"
+        "amazon",
+        "ikea"
       ]
     },
     "is_synthetic": {
@@ -183,6 +184,26 @@
               "type": "string",
               "minLength": 1
             }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "platform": {
+            "const": "ikea"
+          }
+        },
+        "required": [
+          "platform"
+        ]
+      },
+      "then": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "pattern": "^[0-9]{8}$"
           }
         }
       }

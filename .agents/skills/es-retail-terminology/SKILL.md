@@ -1,6 +1,6 @@
 ---
 name: es-retail-terminology
-description: Resolve Spanish retail terms into Simplified Chinese by product category and use, and protect brands, series, models and technical identifiers for Action or Amazon.es. Use for terminology decisions; exclude general prose, other language directions, whole-field filtering and final translation approval.
+description: Resolve Spanish retail terms into Simplified Chinese by product category and use, and protect brands, series, models and technical identifiers for Action, Amazon.es or IKEA Spain. Use for terminology decisions; exclude general prose, other language directions, whole-field filtering and final translation approval.
 ---
 
 # 西语零售术语与标识保护

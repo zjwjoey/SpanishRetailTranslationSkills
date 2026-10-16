@@ -80,6 +80,12 @@ class FoundationChecks(unittest.TestCase):
     def test_missing_identity_rejected(self):
         del self.item['product_id']
         with self.assertRaises(jsonschema.ValidationError): validate_schema(self.item,'item-input')
+    def test_ikea_leading_zero_identity(self):
+        item=copy.deepcopy(self.item)
+        item.update(platform='ikea',product_id='00473546',contract_extension='ikea-es-v1-candidate')
+        validate_schema(item,'item-input')
+        item['product_id']='473546'
+        with self.assertRaises(jsonschema.ValidationError): validate_schema(item,'item-input')
     def test_ai_verified_rejected(self):
         self.item.update(verification_status='VERIFIED',verification={'reviewer_type':'AI'})
         with self.assertRaises(jsonschema.ValidationError): validate_schema(self.item,'item-input')

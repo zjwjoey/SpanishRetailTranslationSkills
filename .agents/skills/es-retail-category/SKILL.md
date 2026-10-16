@@ -1,6 +1,6 @@
 ---
 name: es-retail-category
-description: Interpret Action or Amazon.es Spanish product categories and uses, preserve the platform path, and supply structured category context plus separate Chinese research-category proposals to terminology and review. Use for Spanish-to-Simplified-Chinese retail category work; exclude general copywriting, other language directions, and content deletion.
+description: Interpret Action, Amazon.es or IKEA Spain Spanish product categories and uses, preserve the platform path, and supply structured category context plus separate Chinese research-category proposals to terminology and review. Use for Spanish-to-Simplified-Chinese retail category work; exclude general copywriting, other language directions, and content deletion.
 ---
 
 # 西语零售分类语境

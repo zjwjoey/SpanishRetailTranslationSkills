@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Translation output 1.0.0-foundation",
+  "title": "Translation output 1.0.0-foundation + ikea-es-v1-candidate",
   "type": "object",
   "required": [
     "item_id",
@@ -56,7 +56,8 @@
     "platform": {
       "enum": [
         "action",
-        "amazon"
+        "amazon",
+        "ikea"
       ]
     },
     "stage": {
@@ -145,6 +146,26 @@
               "unreviewed_fields",
               "candidate_findings"
             ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "platform": {
+            "const": "ikea"
+          }
+        },
+        "required": [
+          "platform"
+        ]
+      },
+      "then": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "pattern": "^[0-9]{8}$"
           }
         }
       }

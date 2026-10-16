@@ -2,7 +2,9 @@
 
 冻结日期2026-10-16。V3优先，替代V2 RECORD_CONTRACT和sample.schema的运行约定。JSON须先检查重复key，不静默覆盖；重复属性保持有序key/value数组。
 
-必需字段：`item_id`（本次唯一字符串）、`platform`（action/amazon）、`product_id`（原SKU/ASIN字符串）、`source_snapshot`（label、sha256、captured_at；真实时间未知为null）、`source`（原字段对象）、`source_locations`（每字段的文件/sheet/row/column或synthetic定位）。生产ASIN与variant、parent_asin在已提供时原样保存；缺失保持null，不能伪造。
+必需字段：`item_id`（本次唯一字符串）、`platform`（action/amazon/ikea）、`product_id`（原SKU/ASIN字符串）、`source_snapshot`（label、sha256、captured_at；真实时间未知为null）、`source`（原字段对象）、`source_locations`（每字段的文件/sheet/row/column或synthetic定位）。生产ASIN与variant、parent_asin在已提供时原样保存；缺失保持null，不能伪造。
+
+2026-10-16向后兼容的平台扩展`ikea-es-v1-candidate`：原1.0.0接口字段保留，IKEA记录额外标记contract_extension；product_id必须8位数字字符串，不丢前导0。系列名、原文颜色/材质/完整西语类目与官方说明分别定位；原表中文类目、角色/质量标记只是未验证采集元数据。包装件数是物流包件，不自动作为内装数量；无原始部件关系不能从整套或同系列SKU借属性。人工准入与语言范围不变。
 
 `source`字段：title、categories、specifications（有序key/value）、bullets（数组）、description、details（有序key/value）、brand、platform_metadata。未提供值为null/缺失，不猜测。platform_metadata保存原评分、排名等，不代表其不能在研究结果中保留。用户只给名称时可以部分记录处理，输出缺口，不能编规格。
 
