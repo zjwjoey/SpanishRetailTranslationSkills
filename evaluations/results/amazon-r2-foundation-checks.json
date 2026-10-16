@@ -1,0 +1,16 @@
+{
+  "rule_commit": "e88c30f",
+  "foundation_tests": {"executed": 17, "passed": 17, "failed": 0},
+  "quick_validate": {"skills_executed": 5, "passed": 5, "failed": 0},
+  "runtime_repairs": ["Installed pyyaml/jsonschema in ignored local/test-deps after missing imports", "Set PYTHONUTF8=1 for official validator reading UTF-8 Skill files on Windows"],
+  "synthetic_behavior": {"product_cases": 2, "non_trigger_cases": 1, "status": "CANDIDATE_ROOT_REVIEWED", "initial_failure_preserved": true, "failure": "Clear cotton was over-isolated with ambiguous fabric term; initial evidence quotes/knowledge version also needed repair", "final_observed": "Clear cotton, steel handle, capacity, depth, compatibility suffix and use condition retained; color conflict isolated; independent body and frame materials preserved"},
+  "native_full_output_schema": "NOT_RUN_COMPACT_INTERMEDIATE",
+  "automatic_discovery": "NOT_RUN",
+  "human_confirmed": 0,
+  "formal_train": 0,
+  "formal_validation": 0,
+  "formal_holdout": 0,
+  "plain_codex_baseline_this_round": "NOT_RUN",
+  "upstream_baseline_this_round": "NOT_RUN",
+  "formal_quality_acceptance": "NOT_ESTABLISHED"
+}

@@ -1,0 +1,36 @@
+{
+  "phase": "regression200",
+  "status": "CANDIDATE_REGRESSION_FAILED",
+  "generated": 200,
+  "independently_audited": 200,
+  "root_source_first_supplement": 1,
+  "candidate_facts": 2246,
+  "raw_ai_findings": {
+    "P1": 204,
+    "P2": 17,
+    "P0": 7
+  },
+  "root_raw_p0_dispositions": {
+    "rejected_false_positive": 1,
+    "downgraded_p1": 4,
+    "confirmed_quantity_conflict": 2
+  },
+  "focused_cases": {
+    "meaning_fixed": 1,
+    "partial": 2,
+    "unresolved": 5
+  },
+  "formal_train": 0,
+  "formal_validation": 0,
+  "formal_holdout": 0,
+  "human_confirmed": 0,
+  "plain_codex_baseline": "NOT_RUN",
+  "upstream_baseline": "NOT_RUN",
+  "native_output_schema": "NOT_RUN_COMPACT_INTERMEDIATE",
+  "automatic_discovery": "NOT_RUN",
+  "accuracy": "NOT_ESTABLISHED",
+  "requested_subagent_model": "gpt-5.6-luna",
+  "observed_model": "unknown",
+  "tokens": null,
+  "cost": null
+}
