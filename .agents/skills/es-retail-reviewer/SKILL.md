@@ -5,7 +5,7 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 
 # 商品前后置审查
 
-版本 `1.0.4-candidate-ikea02a2`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
+版本 `1.0.5-candidate-amazon-r2`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
 
 ## 入口与契约
 
@@ -18,6 +18,8 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 遇到可选参数缺失、数字包含关系、重复截短或外部资料补证时，按[范围与证据复核](references/scope-and-evidence.md)区分已交付事实、未主张参数及真实冲突。该参考只澄清审查过程，不是已批准商品知识，也不改变人工准入门禁。
 
 ## SOURCE_AUDIT：决定去向，不生成最终译文
+
+长字段两种模式都先读[事实槽隔离与误报复核](references/atomic-audit.md)，逐事实判断，不把执行分段当隔离单位。
 
 输入完整原文及 `category_context`、`terminology_decisions/protected_identifiers`。先合并类目与术语歧义，必要上下文缺失保留缺口、REVIEW_REQUIRED；不能提前决定删除争议内容。普通短字段可由调用者跳过前审并记录source_audit=null及skip_reason，不能冒充做过SOURCE_AUDIT。
 

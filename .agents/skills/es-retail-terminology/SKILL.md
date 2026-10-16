@@ -5,7 +5,7 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 
 # 西语零售术语与标识保护
 
-版本 `0.2.2-candidate-ikea02a2`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
+版本 `0.2.3-candidate-amazon-r2`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
 
 ## 输入和适用范围
 
@@ -16,6 +16,8 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 触发例：“结合清洁用品语境判断西语 cepillo 并保护型号”。非触发例：“删除Amazon重复段落”“批准中文整件译文”“翻译德语文章”；说明边界并交回调度，不为非适用请求制造商品通过记录。
 
 ## 判断流程
+
+材质、表面属性、织物或携带部件歧义须读[材质维度与部件角色](references/material-dimensions-and-parts.md)。不把上一轮示例词做成全局替换表。
 
 1. 从原名称、类目、用途、规格及详情识别主体、材质、功能、适配对象的术语，保留每次出现的精确位置。类别只提供语境：原类目与实际用途冲突时不能盲从标签。
 2. 按类目、适用及排除条件匹配正式知识。只有实际批准条目覆盖当前语境和字段时才引用其ID/版本。当前批准术语数为0，仍可依西语语义提出候选；不得声称人工批准、`VERIFIED` 或编造证据编号。

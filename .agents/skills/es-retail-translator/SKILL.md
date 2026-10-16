@@ -5,7 +5,7 @@ description: 将 Action、Amazon、IKEA西班牙零售商品的西班牙语名�
 
 # 西语零售商品翻译
 
-版本 `1.0.4-candidate-ikea02a2`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
+版本 `1.0.5-candidate-amazon-r2`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
 
 开始读取[输入契约](../../../contracts/ITEM_INPUT_CONTRACT.md)、[输出契约](../../../contracts/TRANSLATION_OUTPUT_CONTRACT.md)及[交接约定](../../../contracts/SKILL_HANDOFF.md)。使用[approved manifest](../../../knowledge/approved/manifest.json)中实际存在且语境适用的批准知识，遵守[知识政策](../../../knowledge/approved/KNOWLEDGE_POLICY.md)。收到前置动作时另读[SOURCE_AUDIT 契约](../../../contracts/SOURCE_AUDIT_CONTRACT.md)；分级按[质量契约](../../../contracts/QUALITY_AND_SEVERITY.md)。本Skill不依赖local脚本。
 
@@ -18,6 +18,8 @@ platform=ikea时先读[IKEA输入与字段角色](references/ikea-input.md)，�
 短而明确的字段可直接处理，记录 `source_audit=null`、`skip_reason=short_clear_fields`，无需固定启动五个Agent。主体/用途歧义先请求分类或术语澄清；冗长字段、重复、噪声、冲突或截断交Reviewer做SOURCE_AUDIT。交接缺失时保留明确事实并列待审项，不假称已经审查，也不递归调用所有Skills。
 
 ## 生成候选
+
+长字段、混合键值或局部疑点先读[事实槽隔离与覆盖闭合](references/atomic-isolation.md)。执行分段只为调度，不能直接作为待核范围；一个段可同时包含保留事实和待核事实，每个事实都有独立证据和去向。
 
 1. 检查稳定标识、源快照、字段映射及重复JSON key；重复属性保留有序key/value数组，不静默覆盖。身份无法确定、关键原文不可得则 `FAILED`，保留已知身份和失败证据。仅给名称可产生部分候选，其他字段null；缺口进入uncertainties，不能补造规格。
 2. 生成中文前按源字段顺序逐分句建重要声明清单，记录对象、属性/用途、值及限定；不能从已有译文反推清单。再核对主体、选中变体、材质、尺寸轴、功能、包装层次和兼容对象。不从父商品、兄弟变体、旧快照或历史中文补属性。批准术语仅在适用语境内采用；无知识词条时可译清楚部分，歧义保留源词、候选及待核问题。
