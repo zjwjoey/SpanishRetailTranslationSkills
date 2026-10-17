@@ -1,20 +1,18 @@
-diff --git a/upstream/local/skill-competition/candidate-b/upstream-clone-20261018/SKILL.md b/candidate/experiments/skill-competition/candidates/claude-b/SKILL.md
+diff --git a/upstream/SKILL.md b/candidate/SKILL.md
 index 4a15378..ae5542b 100644
---- a/upstream/local/skill-competition/candidate-b/upstream-clone-20261018/SKILL.md
-+++ b/candidate/experiments/skill-competition/candidates/claude-b/SKILL.md
-@@ -1,493 +1,34 @@
- ---
+--- a/upstream/SKILL.md
++++ b/candidate/SKILL.md
+@@ -2,2 +2,4 @@
 -name: translation-quality
 -description: "Comprehensive professional translation skill using Agent Teams. Orchestrates parallel terminology verification, translation with layout preservation, quality review, revision, and professional typesetting — all in one workflow. Use this skill whenever translating documents where accuracy and professional output matter — especially documents with specialized terminology, proper nouns, organization names, or technical content. Triggers on: 'translate with quality check', 'accurate translation', 'verify terminology', 'professional translation', '高质量翻译', '术语核查', '专业翻译', or any translation task involving professional/official documents. Also use when the user has previously encountered translation errors (fabrication, inconsistent terminology, missed content) and wants a more rigorous process. This skill subsumes translation-layout (structure preservation) and formal-doc-layout (professional typesetting) — you do NOT need to invoke those skills separately."
 +name: claude-b-translation-quality
 +description: "Candidate translation workflow adapted from claude-translation-skill for Codex. Use for professional Spanish-to-Chinese document or product-field translation when terminology, omission, fabrication, and structure checks are required."
 +metadata:
 +  short-description: "Codex-adapted terminology, translation, review, and revision workflow"
- ---
- 
+@@ -6 +8 @@ description: "Comprehensive professional translation skill using Agent Teams. Or
 -# Translation Quality — Multi-Agent Professional Translation
 +# Translation Quality — Codex Candidate B
- 
+@@ -8,6 +10 @@ description: "Comprehensive professional translation skill using Agent Teams. Or
 -This skill orchestrates a complete professional translation pipeline using Agent Teams. It combines:
 -- **Translation with structure preservation** (absorbs translation-layout)
 -- **Terminology verification via web search** (new capability)
@@ -22,10 +20,10 @@ index 4a15378..ae5542b 100644
 -- **Revision based on review feedback** (new capability)
 -- **Professional document typesetting** (absorbs formal-doc-layout)
 +This is a V1 competition candidate adapted from `senshinji/claude-translation-skill` at the fixed commit recorded in the adaptation report. It keeps the source workflow's separation of terminology research, translation, review, and revision while using Codex-compatible execution. It is a candidate only; it does not modify or invoke the repository's five formal retail Skills.
- 
+@@ -15 +12 @@ This skill orchestrates a complete professional translation pipeline using Agent
 -## Architecture Overview
 +## Execution contract
- 
+@@ -17,24 +14 @@ This skill orchestrates a complete professional translation pipeline using Agent
 -```
 -              User: "翻译这个文档"
 -                      │
@@ -51,15 +49,15 @@ index 4a15378..ae5542b 100644
 -    │     Phase 4: Typesetting → .docx/.pdf
 -```
 +The lead session owns orchestration and the final output. Treat translator, terminology researcher, reviewer, and reviser as logical roles. If Codex delegation is available, each role may run in an isolated task with explicit file ownership; otherwise execute the roles sequentially in the same session. Do not claim parallelism, model specialization, or a completed handoff unless the runtime provides evidence.
- 
+@@ -42 +16 @@ This skill orchestrates a complete professional translation pipeline using Agent
 -## Prerequisites
 +Use the configured Codex model for every role. The role names describe responsibilities, not model tiers. Use the current workspace or a task-specific temporary workspace; never assume `/tmp`, macOS utilities, or a Claude settings file. Pass role results through declared files and structured messages available in the current Codex runtime.
- 
+@@ -44,3 +18 @@ This skill orchestrates a complete professional translation pipeline using Agent
 -Agent Teams must be enabled:
 -- Add `"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"` to `~/.claude/settings.json` under `"env"`, OR
 -- Export `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in shell profile
 +Before translating, read the whole source and define source language, target language, document/field boundaries, structure, and uncertainty. Preserve source facts and mark uncertainty for review rather than guessing. Do not turn a candidate observation into an approved rule.
- 
+@@ -48,250 +20 @@ Agent Teams must be enabled:
 ----
 -
 -## Phase 0: Team Lead Preparation
@@ -311,7 +309,7 @@ index 4a15378..ae5542b 100644
 -
 -IMPORTANT: Search in batches of 5 terms. For low-confidence terms, clearly note this.
 +## Workflow
- 
+@@ -299,5 +22,5 @@ IMPORTANT: Search in batches of 5 terms. For low-confidence terms, clearly note
 -WEB SEARCH FALLBACK: If a search fails or times out, retry once. After 2 consecutive
 -failures for a term, mark it as confidence: "low" with notes: "web search unavailable"
 -and MOVE ON. Do NOT block the entire glossary for a few unreachable terms. If ALL
@@ -322,15 +320,15 @@ index 4a15378..ae5542b 100644
 +3. Translator role produces a first pass with source-to-target correspondence and structure preservation. Unclear source facts remain marked for review; they are not guessed. A structure report is required when the source contains tables or lists.
 +4. Reviewer role checks the complete source against the first pass in both directions. Prioritize fabrication, omission, numbers, identity, specifications, compatibility, terminology, and structure. Write feedback using [references/review-feedback-schema.md](references/review-feedback-schema.md), including the structure comparison table.
 +5. Reviser role applies critical and major corrections by text-level edits while preserving source structure. The lead then performs a bounded spot check and records unresolved issues as candidate evidence.
- 
+@@ -305,3 +28 @@ mark all as low confidence, and note "web search unavailable" in metadata.
 -Record timing: note your start time and end time in metadata (ISO 8601) so Lead can
 -measure researcher duration for future threshold calibration.
 -```
 +## Output boundary
- 
+@@ -309 +30 @@ measure researcher duration for future threshold calibration.
 -### Spawn Prompt — term-researcher-fast (Sonnet) [split mode, >50 terms]
 +Return only the output fields and metadata requested by the caller. Keep source facts traceable by field or paragraph. Do not declare translation quality, human accuracy, or production readiness from this workflow alone.
- 
+@@ -311,180 +32 @@ measure researcher duration for future threshold calibration.
 -Same rules as the standard term-researcher prompt, with these overrides:
 -- SCOPE: Person names, place names, venue names, product names ONLY
 -- Skip: organizations, technical terms, event names (handled by deep researcher)
@@ -512,7 +510,7 @@ index 4a15378..ae5542b 100644
 -
 ----
 +## Anti-fabrication and failure handling
- 
+@@ -492,2 +34 @@ Read `references/anti-fabrication-checklist.md` for the full prevention and dete
 -## Notes
 -Scaling: see `references/scaling-guidelines.md` (≤10 pages = 1 translator; >10 pages = chunk + parallel; >50 terms = 2 term-researchers). Self-contained skill; do NOT invoke translation-layout or formal-doc-layout separately.
 +Read [references/anti-fabrication-checklist.md](references/anti-fabrication-checklist.md) when translating or reviewing. If a required role, file, source segment, or runtime capability is unavailable, record `BLOCKED` or `NOT_RUN` and continue only with unaffected checks. A quick structural check is engineering evidence, not a product-quality pass.

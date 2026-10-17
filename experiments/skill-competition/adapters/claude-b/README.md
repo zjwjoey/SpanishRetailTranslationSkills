@@ -18,4 +18,3 @@ The adapter preserves the upstream role separation and anti-fabrication intent. 
 ## Candidate invocation
 
 Invoke `experiments/skill-competition/candidates/claude-b/SKILL.md` as a standalone candidate. Load the linked references only when the corresponding workflow phase needs them. Keep each role's artifacts in the caller-provided workspace and record role status as `PLANNED`, `RUNNING`, `TESTED`, `BLOCKED`, `FAILED`, or `NOT_RUN`.
-

@@ -44,4 +44,3 @@ python scripts/check_protected_tokens.py --manifest <manifest.json>
 - `local/skill-competition/upstream-audit/c-protection/`：合成 source、candidate 和 manifest 控制输入。
 
 尝试运行 Skill Creator `quick_validate.py`，但当前工作区 Python 没有 PyYAML，工具在验证 frontmatter 前以 `ModuleNotFoundError: No module named 'yaml'` 退出；所以该项标记为 `NOT_RUN`。四个 CLI 行为控制已真实执行并通过预期结果核验；命令、原始 JSON 标准输出和退出码保存在 `local/skill-competition/upstream-audit/c-protection/control_results.json`。没有运行额外 CI，也没有改动其他 Skills、共享协议或正式内容。
-

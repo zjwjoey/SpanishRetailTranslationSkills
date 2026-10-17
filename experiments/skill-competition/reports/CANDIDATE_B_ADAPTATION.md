@@ -1,5 +1,7 @@
 # Candidate B adaptation record
 
+2026-10-18运行补充：B已在同条件gpt-6-luna原生读取探针及六Amazon开发商品执行中通过入口证据门禁；独立AI核对已完成。下文早期NOT_RUN保留为适配完成时状态，不代表当前未执行。见[开发报告](DEVELOPMENT_RESULTS_20261018.md)，无质量胜出或人工金标结论。
+
 状态：`CANDIDATE` / `TESTED`（来源、适配结构与 quick_validate）；真实商品翻译：`NOT_RUN`。
 
 本次续作与最终入口审校/验证模型：`gpt-6-luna`（2026-10-18）。此前由其他模型形成的证据保持原记录和独立归属，不合并改写为本模型执行结果。
@@ -50,7 +52,7 @@
 | `candidates/claude-b/references/review-feedback-schema.md` | `5CB82A0377243948B109D2C455D57EFE71C91E22D7D0F5C0F2D724E0C70EA23F` |
 | `candidates/claude-b/references/anti-fabrication-checklist.md` | `77439CA314C1FF09A13D4EDCDFBAD1F6DAF42F3B096AD5AE6225D806B5CD1CF4` |
 | `candidates/claude-b/references/scaling-guidelines.md` | `CBCD8B5163069AFE3C7C4AA989787D3F9C83FE1230F770990B70A480A7CC7B69` |
-| `adapters/claude-b/README.md` | `66F6E85171551CB37BC6C810BB7079237D0AC96A11F66621479437A09D2663CF` |
+| `adapters/claude-b/README.md` | `51001D83888559DB55006D8B0DF0F5714E01E4662A167D9B1FC21D42CACD8A32` |
 
 ## 验证与边界
 
@@ -62,3 +64,4 @@
 - 真实商品翻译、批量运行、Codex 原生读取、质量评分：`NOT_RUN`，由 root 负责运行时读取和后续统一实验。
 - 本候选没有新增商品内容；任何小合成控制只能证明接口/流程，不代表商品质量通过。
 
+后续运行状态见 RUNTIME_20261018.md；入口差异另保存为零上下文unified diff，内容差异不变，原有带上下文版本保留在私有candidate-b证据目录。
