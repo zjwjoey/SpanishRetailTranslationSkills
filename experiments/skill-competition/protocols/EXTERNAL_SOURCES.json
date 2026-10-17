@@ -1,0 +1,217 @@
+{
+  "checked_at": "2026-10-17T17:39:13.735078+00:00",
+  "records": [
+    {
+      "repository": "https://github.com/WenhaoLiu0218/translation-quality-codex",
+      "commit": "fb3be31df931a0e71fe8955e25a12245dbf29453",
+      "license": "NOT_FOUND",
+      "language_direction": "multilingual workflow; no verified es-ES/zh-CN product corpus",
+      "domain": "documents",
+      "files": [
+        {
+          "path": ".gitignore",
+          "bytes": 101,
+          "sha256": "0d25c1b57e9b03e5472595b5833338c4ddb20b861a70dc86644ef754f28dce35"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4843,
+          "sha256": "403ee26ff384014f9aaddcdf82d632beae07c7107cd53ed7b83046a461463af7"
+        },
+        {
+          "path": "skills/translation-quality-codex/agents/openai.yaml",
+          "bytes": 354,
+          "sha256": "560bccb2e1cc728857e5e543483e5ef6b161c80ef52bc3b261b12ee69f8b00cd"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/anti-fabrication-checklist.md",
+          "bytes": 4581,
+          "sha256": "77439ca314c1ff09a13d4edcdfbad1f6daf42f3b096ad5ae6225d806b5cd1cf4"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/glossary-schema.md",
+          "bytes": 4232,
+          "sha256": "40c9c0adebee73b92bbd6c5792c1430b7b0d718f21ab21b64bccfc1a8ed77e83"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/review-feedback-schema.md",
+          "bytes": 4910,
+          "sha256": "5cb82a0377243948b109d2c455d57efe71c91e22d7d0f5c0f2d724e0c70ea23f"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/scaling-guidelines.md",
+          "bytes": 5202,
+          "sha256": "cbcd8b5163069afe3c7c4aa989787d3f9c83fe1230f770990b70a480a7cc7b69"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/test-skill-integrity.sh",
+          "bytes": 6803,
+          "sha256": "6ff1988702cc54d1b0d1a293ee71f2c6317dcda32579f8ea9aa40a0b3fa8e343"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/test-translation-structure.sh",
+          "bytes": 7835,
+          "sha256": "ac26df63af644786f516e3083a464e9e7f2b6b176709798b50d4d5974d515101"
+        },
+        {
+          "path": "skills/translation-quality-codex/references/typesetting-rules.md",
+          "bytes": 5565,
+          "sha256": "85c7d24c9f286b0d92b701551e095eddbcb1d8603121ec43e73b46034eb08fd5"
+        },
+        {
+          "path": "skills/translation-quality-codex/scripts/build_readable_output.py",
+          "bytes": 22239,
+          "sha256": "d83f056e6e1eae4acf22e8a5f806d1bf6e5391f60b70cca4a0306ff71f11a566"
+        },
+        {
+          "path": "skills/translation-quality-codex/scripts/prepare_translation_job.py",
+          "bytes": 6908,
+          "sha256": "4d5f2aa1dc48ae71c2e498416c39ec28544bd4531481d3c4d520d60314c87360"
+        },
+        {
+          "path": "skills/translation-quality-codex/scripts/validate_translation_job.py",
+          "bytes": 3707,
+          "sha256": "4438e9106523c3c82d1b83145e124fa9c1935b40dafd5947e9429df6d8b3261b"
+        },
+        {
+          "path": "skills/translation-quality-codex/SKILL.md",
+          "bytes": 12001,
+          "sha256": "d3e06ab85b988f920f2fbf53c55c52a41ba15ca06afb4bd76aff35e1ed09198d"
+        }
+      ],
+      "human_verified": false,
+      "purpose": "METHOD_REFERENCE_NO_COPY",
+      "trusted_training_data": false
+    },
+    {
+      "repository": "https://github.com/senshinji/claude-translation-skill",
+      "commit": "42d6c8a2a07b77f085d6cafe6d4102d36aeafd02",
+      "license": "MIT",
+      "language_direction": "multilingual workflow; no verified es-ES/zh-CN product corpus",
+      "domain": "documents",
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "bytes": 437,
+          "sha256": "db2063d6ad2b295de219061abfa4551b78e197a457446599e9c60a36dc65c2a4"
+        },
+        {
+          "path": ".gitignore",
+          "bytes": 29,
+          "sha256": "cdb76fb89c21a99ed74ededf5e5cb05b6084b82e371b9b5301757e0678b31043"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1087,
+          "sha256": "7c1cfd96f852bf4c228b7bae61878d3b7401535405daf15d81d3f21c26afc8be"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3391,
+          "sha256": "c670091dd03ce8ccaecd809617779cb74503b401f2b2c7d24b289acd4742983f"
+        },
+        {
+          "path": "references/anti-fabrication-checklist.md",
+          "bytes": 4581,
+          "sha256": "77439ca314c1ff09a13d4edcdfbad1f6daf42f3b096ad5ae6225d806b5cd1cf4"
+        },
+        {
+          "path": "references/glossary-schema.md",
+          "bytes": 4232,
+          "sha256": "40c9c0adebee73b92bbd6c5792c1430b7b0d718f21ab21b64bccfc1a8ed77e83"
+        },
+        {
+          "path": "references/review-feedback-schema.md",
+          "bytes": 4910,
+          "sha256": "5cb82a0377243948b109d2c455d57efe71c91e22d7d0f5c0f2d724e0c70ea23f"
+        },
+        {
+          "path": "references/scaling-guidelines.md",
+          "bytes": 5202,
+          "sha256": "cbcd8b5163069afe3c7c4aa989787d3f9c83fe1230f770990b70a480a7cc7b69"
+        },
+        {
+          "path": "references/test-skill-integrity.sh",
+          "bytes": 6803,
+          "sha256": "6ff1988702cc54d1b0d1a293ee71f2c6317dcda32579f8ea9aa40a0b3fa8e343"
+        },
+        {
+          "path": "references/test-translation-structure.sh",
+          "bytes": 7835,
+          "sha256": "ac26df63af644786f516e3083a464e9e7f2b6b176709798b50d4d5974d515101"
+        },
+        {
+          "path": "references/typesetting-rules.md",
+          "bytes": 5565,
+          "sha256": "85c7d24c9f286b0d92b701551e095eddbcb1d8603121ec43e73b46034eb08fd5"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 23625,
+          "sha256": "4d01de1756ae1526c0fce31b800d3cde6b42b6b596d4f4842008aea2834a1610"
+        }
+      ],
+      "human_verified": false,
+      "purpose": "ENGINEERING_CANDIDATE",
+      "trusted_training_data": false
+    },
+    {
+      "repository": "https://github.com/tokyboop/game-localization-skill",
+      "commit": "bccaac8abde17bcd9e507a9c729e259ae1750251",
+      "license": "MIT",
+      "language_direction": "multilingual workflow; no verified es-ES/zh-CN product corpus",
+      "domain": "game localization",
+      "files": [
+        {
+          "path": ".gitignore",
+          "bytes": 242,
+          "sha256": "bc9e7685c0d4131443cc0ae557afaac0c38805c78ccd8cce4ffd4dac07411c6e"
+        },
+        {
+          "path": "docs/LEARNING_NOTES.md",
+          "bytes": 5851,
+          "sha256": "2ef1d830d8f34bd02eeda6845bcc6624e838c83c2bb8f14ae070733c275682c2"
+        },
+        {
+          "path": "docs/SESSION_SUMMARY.md",
+          "bytes": 8647,
+          "sha256": "827e4b03435ab6431b1cca5a67cc5fd3c65585b6bdfc92db23139a74bf722c5b"
+        },
+        {
+          "path": "examples/TEST_GUIDE.md",
+          "bytes": 6332,
+          "sha256": "2f1d555e37b803f132f2b5bfd3e5507fab76c0c6fec7fc45466a1997446bc2d0"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1086,
+          "sha256": "d7bd356d42ac640a25e2421c53babf0a64c86d88d0421281e14e6004c790ae59"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4158,
+          "sha256": "9c0a7334587adc7d260bf7feb6ed91953e3d7d5c6dfb4044710ac92a0a06ef5d"
+        },
+        {
+          "path": "references/placeholder_patterns.md",
+          "bytes": 2030,
+          "sha256": "997bced73bd47b0a4a906cbf0af0aa2d4a9c57fee2bd3bf4e73b7b026303f8d5"
+        },
+        {
+          "path": "scripts/translate.py",
+          "bytes": 4153,
+          "sha256": "5ed662d13396d9f02d76b3982c74054f6d772e9f29590296ebfaadec57b0e133"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 7825,
+          "sha256": "345142f32103151effa752b8e367929277f89234e6416cc16df33820bac6d21f"
+        }
+      ],
+      "human_verified": false,
+      "purpose": "ENGINEERING_CANDIDATE",
+      "trusted_training_data": false
+    }
+  ],
+  "added_trusted_bilingual_data": 0
+}

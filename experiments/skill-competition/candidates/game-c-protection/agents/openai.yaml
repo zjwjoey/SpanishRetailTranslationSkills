@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game C Token Protection"
+  short_description: "Check explicitly listed token preservation"
+  default_prompt: "Use $game-c-protection to check explicitly listed protected tokens in a source and candidate translation."

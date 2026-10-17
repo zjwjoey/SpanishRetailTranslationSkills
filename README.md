@@ -1,5 +1,9 @@
 # Spanish Retail Translation Skills
 
+2026-10-18执行更新：竞争实验仅使用Amazon.es数据；子智能体统一gpt-6-luna。已完成其他平台盘点保留，不启动其本轮新翻译。
+
+2026-10-18当前研发任务：启动[翻译Skills竞争进化与淘汰计划V1](experiments/skill-competition/protocols/TASK_V1.md)，先完成实际仓库审计、三个上游最新能力/许可证核查和独立实验环境准备。现有五Skills冻结为基线，实验候选允许重构/合并/替换/停用；质量增益、正式知识升级与最终架构均待实际验证。允许新开发分支正常提交及非强制推送；源数据、正式Skills、approved及历史证据保留。
+
 2026-10-17新任务：在`eval/plain-vs-skills-v1-20261017`评测分支执行30个真实新SKU的普通Codex/当前五Skills对照，Action、Amazon.es、IKEA各10个。冻结当前Skills，盘点历史曝光后同源同模型运行，独立源先行QA；不修改Skills或approved、不覆盖历史、不合并main、不上传完整货盘或译文。以`evaluations/plain_vs_skills_v1/PROTOCOL.md`和真实执行证据为准。
 
 本轮实际结果：两组各30条候选与30组独立AI审读已完成；[匿名评测报告](evaluations/plain_vs_skills_v1/RESULTS_20261017.md)。样本新颖性仍为NOVELTY_UNVERIFIED，尚未证明重要错误上的质量优势，不作生产准确率或正式Holdout结论。
@@ -20,7 +24,7 @@
 
 **项目状态：Foundation Candidate 开发中；尚未通过 V1 训练与质量验收**  
 **当前语言范围：仅西班牙语 → 简体中文（es-ES → zh-CN）**  
-**核心交付：严格固定为 5 个专业 Skills**
+**现有基线：5 个专业 Skills；下一版结构由竞争实验决定**
 
 2026-10-16用户新增授权：在原Action/Amazon范围外接入IKEA西班牙只读货盘，使用`gpt-5.6-luna`子智能体，每批100个SKU，先完成首个1000，再核对并提出调优；第二个1000须在首轮核对/调优后使用不同商品。此为无历史译文的候选生成与工程调优，不将AI结果自动升级为人工标准答案；五Skill数量、语言和正式训练准入规则不变。不修改IKEASKUTracker采集程序、数据库或原始输出。
 

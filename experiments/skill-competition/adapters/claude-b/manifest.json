@@ -1,0 +1,31 @@
+{
+  "candidate_id": "claude-b",
+  "status": "candidate",
+  "source": {
+    "repository": "https://github.com/senshinji/claude-translation-skill.git",
+    "commit": "42d6c8a2a07b77f085d6cafe6d4102d36aeafd02",
+    "license": "MIT",
+    "license_file": "../../candidates/claude-b/LICENSE"
+  },
+  "adapter_model": "gpt-6-luna",
+  "adapter_date": "2026-10-18",
+  "entrypoint": "../../candidates/claude-b/SKILL.md",
+  "adaptation_diff": "ADAPTATION_DIFF.md",
+  "copied_references": [
+    "../../candidates/claude-b/references/glossary-schema.md",
+    "../../candidates/claude-b/references/review-feedback-schema.md",
+    "../../candidates/claude-b/references/anti-fabrication-checklist.md",
+    "../../candidates/claude-b/references/scaling-guidelines.md"
+  ],
+  "adaptation_scope": [
+    "Map Claude Agent Teams roles to Codex logical roles and available delegation.",
+    "Replace Claude-specific handoff assumptions with declared workspace artifacts and supported runtime handoff.",
+    "Replace fixed macOS temporary paths with the caller-provided workspace.",
+    "Omit document typesetting from this candidate workflow."
+  ],
+  "validation": {
+    "quick_validate": "passed",
+    "codex_native_invocation": "not_run",
+    "translation_quality": "not_run"
+  }
+}
