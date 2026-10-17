@@ -5,7 +5,7 @@ description: Resolve Spanish retail terms into Simplified Chinese by product cat
 
 # 西语零售术语与标识保护
 
-版本 `0.2.4-candidate-amazon-r3`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
+版本 `0.2.5-candidate-amazon-r3`；工程候选，尚非真实数据训练或质量验收结果。独立完成术语判断，不代替整件翻译、分类或审校。
 
 ## 输入和适用范围
 

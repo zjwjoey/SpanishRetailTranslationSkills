@@ -5,7 +5,7 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 
 # 商品前后置审查
 
-版本 `1.0.6-candidate-amazon-r3`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
+版本 `1.0.7-candidate-amazon-r3`，状态 Foundation Candidate。一个Skill、两种模式；无外部服务、脚本或生产项目依赖。AI审查结论不产生人工确认资格，不改样本为VERIFIED。
 
 ## 入口与契约
 
@@ -34,6 +34,8 @@ description: 审查西班牙语零售商品：SOURCE_AUDIT在翻译前区分商�
 输入完整原文、原前审动作/保留账本（短字段跳过时含明确skip_reason）及实际中文结果。按[后审规则](references/translation-audit.md)先从源独立建事实清单，再对照中文和筛选动作；不能把译者解释或自评当证据。尽量在不同上下文审查并如实记录independence_method；没有独立重读就不能PASSED。
 
 核对主体、用途、限定词、包装层次、数字单位、材质、品牌/系列/型号、兼容对象、类目及跨字段迁移。双向检查“输出有来源”和“重要源事实有去向”，验证每个去重/排除动作未删独有事实。受冲突影响的槽为null/待核，不能因此清空整条商品或用确定值消除矛盾。
+
+结束前按独立源清单逐项定位实际中文或有据待核，未映射项必须具体报告；不能以“主要参数一致”代替完整核对。报遗漏先查全部translation_zh、identifiers、research_metadata及事实状态；报冲突先比较对象/属性/量纲/条件。内容错误、结构登记缺口、源问题分别裁定，按[原子审查边界](references/atomic-audit.md)处理实际值已保留或已隔离的反例。
 
 输出 `stage=TRANSLATION_AUDIT`，保留身份/原source或不可变引用、实际候选和账本，并填写field_alignment、protected_identifiers、retained_facts、uncertainties、conflicts、review与run_metadata。review列checked_fields/unreviewed_fields、candidate_findings（severity/field/source_span/target_span/reason）、结论和独立性方法。未运行的调用、时长、token、模型未知值不编造；字段值分别用null/unknown。
 
