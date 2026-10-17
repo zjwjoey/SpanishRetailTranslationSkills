@@ -1,6 +1,6 @@
 # Amazon 第三轮：首1000统一核对期间的候选 Skills 调优
 
-状态：`IN_PROGRESS / REVIEW_REQUIRED`。这里记录真实候选迭代与失败，不代表生产验收、人工金标或模型权重训练。
+历史第一候选记录：当时状态为`IN_PROGRESS / REVIEW_REQUIRED`。此后用户收缩为简单关键问题优化，该范围已完成；当前结果见[关键问题简化优化](AMAZON_R3_SIMPLE_OPTIMIZATION.md)。本文保留实际第一候选迭代与失败，不代表生产验收、人工金标或模型权重训练。
 
 ## 原始基线与版本边界
 

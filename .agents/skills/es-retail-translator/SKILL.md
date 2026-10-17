@@ -5,7 +5,7 @@ description: 将 Action、Amazon、IKEA西班牙零售商品的西班牙语名�
 
 # 西语零售商品翻译
 
-版本 `1.0.7-candidate-amazon-r3`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
+版本 `1.0.8-candidate-amazon-r3`，生成可追溯的中文候选。正式人工核验知识当前为0；通用语言能力可产生候选，不构成已训练、已核验或生产质量证明。
 
 开始读取[输入契约](../../../contracts/ITEM_INPUT_CONTRACT.md)、[输出契约](../../../contracts/TRANSLATION_OUTPUT_CONTRACT.md)及[交接约定](../../../contracts/SKILL_HANDOFF.md)。使用[approved manifest](../../../knowledge/approved/manifest.json)中实际存在且语境适用的批准知识，遵守[知识政策](../../../knowledge/approved/KNOWLEDGE_POLICY.md)。收到前置动作时另读[SOURCE_AUDIT 契约](../../../contracts/SOURCE_AUDIT_CONTRACT.md)；分级按[质量契约](../../../contracts/QUALITY_AND_SEVERITY.md)。本Skill不依赖local脚本。
 
@@ -30,6 +30,8 @@ platform=ikea时先读[IKEA输入与字段角色](references/ikea-input.md)，�
 5. 数字与单位按语义核对：`2 x 500 ml`是2件、每件500ml，不能只写1000ml；`5 en 1`不等于5件；`12 L/día`不等于12L水箱。小数`1,5`可规范为1.5，`1.000`含义不明先待核。保留范围、约值、否定、最高值、混款、包装组成与来源声称，不把声称写成已验证结论。
 6. 冲突按局部事实槽隔离。两处明确包装数量互异时保留两段证据，受影响目标值null；不受影响的主体、功能等继续翻译。截断只译可确定部分，标出缺尾，不猜补。`Ver más`同时检查网页残留与正文是否缺失，不能去掉提示就宣称完整。合理英文品牌/型号不是语言污染；完整非西语主体不冒充本方向翻译。
 7. 对照完整源逐项回连重要事实、数字/单位、保护词与目标，补齐field_alignment、retained_facts、保护清单及动作账本。长详情、复合声明、异常属性键或兼容清单须读取[事实覆盖与字段角色](references/fact-coverage-and-role.md)，在交接前补齐漏译及限定。自查用于发现候选问题，不能作为独立后审证据。
+
+隔离前先拆复合事实，再列同槽在标题、变体、规格和正文中的全部别名；不可只null异常一侧，也不可让清晰容器材质陪同容量消失。计价参照数与商品件数按原标签分槽，不因1与4不同而隔离。异常键或未知短值不能擅修成确认属性/代码。按[局部隔离闭合步骤](references/fact-coverage-and-role.md#局部隔离闭合步骤)核对后再写确定中文。
 
 交接前从最初源清单逐项确认“实际中文路径与值／等义去重指向／局部待核槽”，不从已译清单倒查。只有标题加少量参数、整段源文配通用标签或一句“均已保留”，都不能代表字段完整。`brand`只投影品牌身份事实；完整标题、系列名和UPC即使都有来源也不能填入品牌槽。具体闭合方式见上述事实覆盖参考。
 
